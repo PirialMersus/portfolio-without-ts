@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import s from './App.module.scss'
 import joliPhoto from '../src/img/joly.jpg'
 import {BigButton} from "./components/BigButton/Bigbutton";
-import {InnerComponent} from "./components/InnerComponent/Innercomponent";
+import {InnerComponentTopRight} from "./components/InnerComponentTopRight/InnerComponentTopRight";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faTimesCircle} from '@fortawesome/free-solid-svg-icons'
+import {InnerComponentBottomLeft} from "./components/InnerComponentBottomLeft/InnerComponentBottomLeft";
+import {InnerComponentBottomRight} from "./components/InnerComponentBottomRight/InnerComponentBottomRight";
 
 const classNames = require('classnames');
 
@@ -16,7 +18,7 @@ function App() {
         setClass(`${s.app} ${s.visible}`)
     }, [])
 
-    const [activeBlockNumber, setNumberOfActiveBlock] = useState(1)
+    const [activeBlockNumber, setNumberOfActiveBlock] = useState(2)
 
 
     const finalFirstBlock_item_Class = classNames(s.item, s.topLeft, {
@@ -41,7 +43,7 @@ function App() {
                 {/*<img src={joliPhoto} alt="Joly" className={s.photo}/>*/}
             </div>
             <div className={s.contentColumn}>
-                <section className={finalFirstBlock_item_Class }>
+                <section className={finalFirstBlock_item_Class}>
                     <FontAwesomeIcon
                         icon={faTimesCircle}
                         className={s.fontAwesome}
@@ -60,17 +62,10 @@ function App() {
                          onClick={() => {
                              setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
                          }}>
-                    <FontAwesomeIcon
-                        icon={faTimesCircle}
-                        className={s.fontAwesome}
-                        onClick={() => {
-                            setNumberOfActiveBlock(1)
-                        }}
-                    />
                     <div className={s.miniBlock}>
                         <h2>about me</h2>
                     </div>
-                    <InnerComponent/>
+                    <InnerComponentTopRight/>
                 </section>
                 <section className={finalThirdBlock_item_Class}
                          onClick={() => {
@@ -84,8 +79,9 @@ function App() {
                         }}
                     />
                     <div className={s.miniBlock}>
-                        <BigButton firstWorld={'hello'} secondWorld={'world'}/></div>
-                    <InnerComponent/>
+                        <BigButton firstWorld={'hello'} secondWorld={'world'}/>
+                    </div>
+                    <InnerComponentBottomLeft/>
                 </section>
                 <section className={finalFourthBlock_item_Class}
                          onClick={() => {
@@ -101,7 +97,7 @@ function App() {
                     <div className={s.miniBlock}>
                         <h2>get in touch</h2>
                     </div>
-                    <InnerComponent/>
+                    <InnerComponentBottomRight/>
                 </section>
             </div>
         </div>
