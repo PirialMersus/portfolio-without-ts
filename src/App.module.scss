@@ -36,7 +36,7 @@
       padding: 0;
       margin: 0;
       top: 0;
-      background-color: aliceblue;
+      background-color: #f0f8ff;
 
       > section {
         position: absolute;
@@ -75,17 +75,18 @@
         height 1s ease,
         top 1s ease,
         bottom 1s ease,
-        left 1s ease,opacity 1s ease,visibility 1s ease,
+        left 1s ease, opacity 1s ease, visibility 1s ease,
         right 1s ease;
 
-        background: antiquewhite;
+        background: #faebd7;
 
         &.activeItem {
           width: calc(100% - 24px);
           height: calc(100% - 48px);
           top: 24px;
           left: 0;
-          background: #bab3b3;
+          //background: #bab3b3;
+          overflow: scroll;
         }
 
         &.deactiveItem {
@@ -101,6 +102,10 @@
         }
 
         .miniBlock {
+          h2 {
+            font-size: 30px;
+            color: #2f5b2f;
+          }
         }
       }
 

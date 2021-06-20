@@ -18,7 +18,15 @@ function App() {
         setClass(`${s.app} ${s.visible}`)
     }, [])
 
+
     const [activeBlockNumber, setNumberOfActiveBlock] = useState(2)
+    const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
+
+    useEffect(() => {
+        setTimeout(()=> {
+            setNumberOfBlockAfterDelay(activeBlockNumber)
+        }, 1000)
+    }, [activeBlockNumber])
 
 
     const finalFirstBlock_item_Class = classNames(s.item, s.topLeft, {
@@ -65,23 +73,17 @@ function App() {
                     <div className={s.miniBlock}>
                         <h2>about me</h2>
                     </div>
-                    <InnerComponentTopRight/>
+                    {numberOfBlockAfterDelay === 2 && <InnerComponentTopRight activeBlockNumber={activeBlockNumber}/>}
                 </section>
                 <section className={finalThirdBlock_item_Class}
                          onClick={() => {
                              setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
-                         }}>
-                    <FontAwesomeIcon
-                        icon={faTimesCircle}
-                        className={s.fontAwesome}
-                        onClick={() => {
-                            setNumberOfActiveBlock(1)
-                        }}
-                    />
-                    <div className={s.miniBlock}>
-                        <BigButton firstWorld={'hello'} secondWorld={'world'}/>
-                    </div>
-                    <InnerComponentBottomLeft/>
+                         }}
+                >
+                    {activeBlockNumber !== 3 ? <div className={s.miniBlock}>
+                            <BigButton firstWorld={'hello'} secondWorld={'world'}/>
+                        </div> :
+                        <InnerComponentBottomLeft/>}
                 </section>
                 <section className={finalFourthBlock_item_Class}
                          onClick={() => {

@@ -1,4 +1,9 @@
 .wrap {
+  &.invisible {
+    opacity: 0;
+    visibility: hidden;
+  }
+  transition: all 1s ease;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -45,9 +50,17 @@
   }
 
   .personalInfosBlock {
-    padding: 0 24px;
+    padding: 0 24px 50px;
+    //border-bottom: 1px solid #efe9e9;
+    border-bottom: 1px solid #111;
 
-    > div {
+    &:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+
+    > div:nth-child(1) {
       display: flex;
       align-items: center;
       color: #656c6d;
@@ -64,75 +77,111 @@
         line-height: 110%;
       }
     }
-  }
 
-  .myCommonInfo {
-    p {
-      padding: 0 24px;
-
-      margin: 0 auto 80px;
-      font-size: 15px;
-      line-height: 2;
-      color: #656c6d;
-      font-weight: 400;
+    .myCommonInfo {
+      p {
+        margin: 0 auto 80px;
+        font-size: 15px;
+        line-height: 2;
+        color: #656c6d;
+        font-weight: 400;
+      }
     }
-  }
 
-  .exactlyMyInfo {
-    padding: 0 24px;
-    width: 50%;
-    margin-left: auto;
-    left: auto;
-    right: auto;
-    float: left;
-    color: #656c6d;
+    .exactlyMyInfo {
+      width: 50%;
+      margin-left: auto;
+      left: auto;
+      right: auto;
+      float: left;
+      color: #656c6d;
 
-    ul {
-      li {
-        padding-bottom: 13px;
-        font-size: 13px;
+      ul {
+        li {
+          padding-bottom: 13px;
+          font-size: 13px;
 
-        span {
-          color: #222;
-          font-weight: 700;
+          span {
+            color: #222;
+            font-weight: 700;
+          }
         }
       }
     }
-  }
 
-  a {
-    font-weight: 700;
-    height: 42px;
-    line-height: 42px;
-    font-size: 15px;
-    float: left;
-    text-decoration: none;
-    color: #fff;
-    text-align: center;
-    letter-spacing: .5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    vertical-align: middle;
-    padding: 0 2rem;
-
-    &.btn:not(.btnBlog) {
-      margin-right: 25px;
-      background: #ffb400;
-    }
-    svg {
-      font-size: 22px;
-      padding-left: 8px;
-      //line-height: inherit;
+    a {
+      font-weight: 700;
+      height: 42px;
+      line-height: 42px;
+      font-size: 15px;
+      float: left;
+      //display: flex;
+      text-decoration: none;
       color: #fff;
+      text-align: center;
+      letter-spacing: .5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      vertical-align: middle;
+      padding: 0 2rem;
+
+      &.btn:not(.btnBlog) {
+        margin-right: 25px;
+        background: #ffb400;
+      }
+
+      &.btn:hover{
+        box-shadow: none;
+        color: #eee;
+      }
+
+      &.btnBlog {
+        border: 1px solid #ffb400;
+        color: #ffb400;
+        background: transparent;
+        transition: .1s;
+
+        svg {
+          color: #ffb400;
+        }
+      }
+      &.btnBlog:hover{
+        color: #fff;
+        background: #ffb400;
+        svg {
+          color: #fff;
+        }
+      }
+
+      svg {
+        font-size: 22px;
+        padding-left: 8px;
+        //line-height: inherit;
+        color: #fff;
+      }
     }
+
+
   }
 
-  //a {
-  //  .btn:not(.btn-blog) {
-  //    margin-right: 25px;
-  //    background: #ffb400;
-  //  }
-  //}
+.sliderWrap{
+  display: flex;
+  .controlsBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .controlBtn {
+
+    }
+
+    .controlBtn h6{
+      display: inline-block;
+    }
+  }
+  .sliderBlock{}
+}
 
 
   .closeButton {
