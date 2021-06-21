@@ -9,6 +9,7 @@ import {faBriefcase} from '@fortawesome/free-solid-svg-icons'
 import {faGraduationCap} from '@fortawesome/free-solid-svg-icons'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 import s from './InnerComponentTopRight.module.scss'
+import {faTimesCircle} from "@fortawesome/free-solid-svg-icons/index";
 
 const classNames = require('classnames');
 
@@ -62,7 +63,7 @@ export const InnerComponentTopRight = (props) => {
             </div>
             <div className={s.sliderWrap}>
                 <div className={s.controlsBlock}>
-                    <div className={s.controlBtn}>
+                    <div className={classNames(s.controlBtn, s.active)}>
                         <FontAwesomeIcon icon={faBriefcase}/>
                         <h6>Experience</h6>
                     </div>
@@ -75,11 +76,24 @@ export const InnerComponentTopRight = (props) => {
                         <h6>Skills</h6>
                     </div>
                 </div>
-                <div className={s.sliderBlock}></div>
+                <div className={s.slidesBlock}>
+                    <div className={s.slide}>
+                        <div> <FontAwesomeIcon icon={faBriefcase}/>
+                            <h6>Experience</h6></div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                    <div className={s.slide}></div>
+                    <div className={s.slide}></div>
+                </div>
             </div>
             <div className={s.closeButton}>
-                <FontAwesomeIcon icon={faTimes}/>
+                <FontAwesomeIcon icon={faTimes} className={s.fontAwesome} onClick={() => {
+                    props.setNumberOfActiveBlock(1)
+                }}/>
             </div>
+
         </div>
     )
 }

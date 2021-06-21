@@ -46,7 +46,6 @@
       }
     }
 
-
   }
 
   .personalInfosBlock {
@@ -130,7 +129,7 @@
         background: #ffb400;
       }
 
-      &.btn:hover{
+      &.btn:hover {
         box-shadow: none;
         color: #eee;
       }
@@ -145,7 +144,7 @@
           color: #ffb400;
         }
       }
-      &.btnBlog:hover{
+      &.btnBlog:hover {
         color: #fff;
         background: #ffb400;
         svg {
@@ -161,28 +160,71 @@
       }
     }
 
-
   }
 
-.sliderWrap{
-  display: flex;
-  .controlsBlock{
+  .sliderWrap {
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    .controlsBlock {
+      padding: 0 24px;
+      width: 33.3333333333%;
+      left: auto;
+      right: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    .controlBtn {
+      .controlBtn {
+        background: rgba(0, 0, 0, 0.1) !important;
+        box-shadow: none;
+        padding: 24px;
+        margin: 24px 0;
+        cursor: pointer;
+        user-select: none;
+        color: #656c6d;
+        line-height: 1.5;
+        font-size: 20px;
+        background: #fff;
+        width: 100%;
+
+        svg{
+        margin-right: 13px;
+        }
+
+        h6 {
+          display: inline-block;
+          text-transform: uppercase;
+          font-size: 1.15rem;
+          line-height: 110%;
+        }
+
+        &.active{
+          background: #ffb400 !important;
+        }
+      }
 
     }
+    .slidesBlock {
+      width: 66.6666666667%;
+      margin-left: auto;
+      left: auto;
+      right: auto;
+      padding: 0 24px !important;
 
-    .controlBtn h6{
-      display: inline-block;
+      .slide {
+        >div{
+          width: 100%;
+        }
+        &:nth-child(1){
+
+        }
+        &:nth-child(2){
+
+        }
+      }
     }
   }
-  .sliderBlock{}
-}
-
 
   .closeButton {
     position: absolute;
@@ -200,3 +242,4 @@
   }
 
 }
+

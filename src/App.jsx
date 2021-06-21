@@ -23,7 +23,7 @@ function App() {
     const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
 
     useEffect(() => {
-        setTimeout(()=> {
+        setTimeout(() => {
             setNumberOfBlockAfterDelay(activeBlockNumber)
         }, 1000)
     }, [activeBlockNumber])
@@ -52,13 +52,6 @@ function App() {
             </div>
             <div className={s.contentColumn}>
                 <section className={finalFirstBlock_item_Class}>
-                    <FontAwesomeIcon
-                        icon={faTimesCircle}
-                        className={s.fontAwesome}
-                        onClick={() => {
-                            setNumberOfActiveBlock(1)
-                        }}
-                    />
                     <div
                         className={s.miniBlock}
                         // onClick={() => {setNumberOfActiveBlock(true)}
@@ -66,14 +59,16 @@ function App() {
                         <p>HI THERE ! I'M</p><h2>LINDA SMITH</h2><p>web designer</p>
                     </div>
                 </section>
-                <section className={finalSecondBlock_item_Class}
-                         onClick={() => {
-                             setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
-                         }}>
-                    <div className={s.miniBlock}>
+                <section className={finalSecondBlock_item_Class}                >
+                    <div className={s.miniBlock} onClick={() => {
+                        setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
+                    }}>
                         <h2>about me</h2>
                     </div>
-                    {numberOfBlockAfterDelay === 2 && <InnerComponentTopRight activeBlockNumber={activeBlockNumber}/>}
+                    {numberOfBlockAfterDelay === 2 && <InnerComponentTopRight
+                        activeBlockNumber={activeBlockNumber}
+                        setNumberOfActiveBlock={setNumberOfActiveBlock}
+                    />}
                 </section>
                 <section className={finalThirdBlock_item_Class}
                          onClick={() => {
@@ -89,13 +84,7 @@ function App() {
                          onClick={() => {
                              setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
                          }}>
-                    <FontAwesomeIcon
-                        icon={faTimesCircle}
-                        className={s.fontAwesome}
-                        onClick={() => {
-                            setNumberOfActiveBlock(1)
-                        }}
-                    />
+
                     <div className={s.miniBlock}>
                         <h2>get in touch</h2>
                     </div>
