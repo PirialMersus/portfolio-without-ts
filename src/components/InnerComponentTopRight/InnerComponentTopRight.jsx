@@ -78,14 +78,32 @@ export const InnerComponentTopRight = (props) => {
                 </div>
                 <div className={s.slidesBlock}>
                     <div className={s.slide}>
-                        <div> <FontAwesomeIcon icon={faBriefcase}/>
-                            <h6>Experience</h6></div>
-                        <div>
-                            
+                        <div className={s.resumeCardHeader}>
+                            <FontAwesomeIcon icon={faBriefcase}/>
+                            <h6>Experience</h6>
+                        </div>
+                        <div className={s.resumeCardBody}>
+
                         </div>
                     </div>
-                    <div className={s.slide}></div>
-                    <div className={s.slide}></div>
+                    <div className={s.slide}>
+                        <div className={s.resumeCardHeader}>
+                            <FontAwesomeIcon icon={faGraduationCap}/>
+                            <h6>Education</h6>
+                        </div>
+                        <div className={s.resumeCardBody}>
+
+                        </div>
+                    </div>
+                    <div className={s.slide}>
+                        <div className={s.resumeCardHeader}>
+                            <FontAwesomeIcon icon={faStar}/>
+                            <h6>Skills</h6>
+                        </div>
+                        <div className={s.resumeCardBody}>
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className={s.closeButton}>

@@ -3,6 +3,7 @@
     opacity: 0;
     visibility: hidden;
   }
+
   transition: all 1s ease;
   position: absolute;
   top: 0;
@@ -144,9 +145,11 @@
           color: #ffb400;
         }
       }
+
       &.btnBlog:hover {
         color: #fff;
         background: #ffb400;
+
         svg {
           color: #fff;
         }
@@ -165,6 +168,7 @@
   .sliderWrap {
 
     display: flex;
+
     .controlsBlock {
       padding: 0 24px;
       width: 33.3333333333%;
@@ -188,8 +192,8 @@
         background: #fff;
         width: 100%;
 
-        svg{
-        margin-right: 13px;
+        svg {
+          margin-right: 13px;
         }
 
         h6 {
@@ -199,12 +203,13 @@
           line-height: 110%;
         }
 
-        &.active{
+        &.active {
           background: #ffb400 !important;
         }
       }
 
     }
+
     .slidesBlock {
       width: 66.6666666667%;
       margin-left: auto;
@@ -213,14 +218,24 @@
       padding: 0 24px !important;
 
       .slide {
-        >div{
-          width: 100%;
-        }
-        &:nth-child(1){
+        .resumeCardHeader {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 21px;
+          padding: 24px;
+          text-align: center;
+          background: #f2f2f2;
+          border-bottom: 1px solid #ddd;
 
+          h6 {
+            display: inline-block;
+            //text-transform: uppercase;
+            font-weight: bold;
+            font-size: 21px;
+          }
         }
-        &:nth-child(2){
 
+        .resumeCardBody {
         }
       }
     }
