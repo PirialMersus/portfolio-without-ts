@@ -236,6 +236,103 @@
         }
 
         .resumeCardBody {
+
+          .experience{
+            padding: 24px;
+            display: flex;
+            flex-flow: column;
+
+            .resumeContent{
+              position: relative;
+
+              h6{
+                margin-bottom: 10px;
+                font-size: 15px;
+                margin-top: 0;
+                text-transform: uppercase;
+                line-height: 110%;
+                font-weight: 400;
+                >span{
+                  //margin-left: 10px;
+                  font-weight: 600;
+                }
+
+              }
+              >span{
+                font-weight: 400;
+                color: #aaa;
+                font-size: 13px;
+                svg{
+                  //padding-right: 10px;
+                  //color: white;
+                }
+                >span {
+                  margin-left: 10px;
+                }
+
+              }
+
+              >p {
+                font-size: 14px;
+                padding-bottom: 20px;
+                margin-top: 5px;
+                line-height: 2;
+              }
+            }
+
+            .separator{
+              height: 2px;
+              width: 70px;
+              margin-bottom: 24px;
+              background: #ffb400;
+            }
+          }
+          .counterContainer{
+            padding: 24px;
+            display: flex;
+            flex-flow: column;
+
+            .row{
+              margin-left: -.75rem;
+              margin-right: -.75rem;
+              margin-bottom: 20px;
+              &:after {
+                content: " ";
+                display: table;
+                clear: both;
+              }
+
+              .col{
+                float: left;
+                padding: 0 .75rem;
+                min-height: 1px;
+                width: 50% !important;
+
+                .resumeContent{
+                  position: relative;
+
+                  >h6 {
+                    font-size: 15px;
+                    margin-top: 0;
+                    text-transform: uppercase;
+                    line-height: 110%;
+                    margin: .7666666667rem 0 .46rem 0;
+                  }
+                  >p{
+                    font-size: 14px;
+                    padding-bottom: 20px;
+                    margin: 0 auto;
+                    margin-top: 5px;
+                    color: #ffb400;
+                    line-height: 2;
+                    //color: #656c6d;
+                    font-weight: 400;
+
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
