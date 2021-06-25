@@ -16,15 +16,43 @@ import {faTimesCircle} from "@fortawesome/free-solid-svg-icons/index";
 const classNames = require('classnames');
 
 export const InnerComponentTopRight = (props) => {
+
+    const [activeSlideNumber, setActiveSlideNumber] = React.useState(0)
+
+
+    const finalFirstContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 0 && s.active}`
+    const finalSecondContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 1 && s.active}`
+    const finalThirdContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 2 && s.active}`
+
+    const slides = ['active', 'neutral', 'passive']
+
+
+    function changeSlidesNumbers(slide, prevState) {
+        // debugger
+        slides[slide] = 'active'
+        slides[prevState] = 'neutral'
+        slides.map((slide, index) => {
+                if (index !== slide && index !== prevState) {
+                    slides[index] = 'passive'
+                }
+            }
+        )
+    }
+
+    const firstSlideCommonClass = `${s.slide} ${slides[0]}`
+    const secondSlideCommonClass = `${s.slide} ${slides[1]}`
+    const thirdSlideCommonClass = `${s.slide} ${slides[2]}`
+
+
     return (
         <div className={classNames(s.wrap, {[s.invisible]: props.activeBlockNumber !== 2})}>
-            <h2>Helo, guys</h2>
+            <h2>Hello, guys</h2>
             <div className={s.divideLineBlock}>
-                <div className={s.line}></div>
+                <div className={s.line}/>
                 <div className={s.letterIcon}>
                     <FontAwesomeIcon icon={faAddressCard}/>
                 </div>
-                <div className={s.line}></div>
+                <div className={s.line}/>
             </div>
             <div className={s.personalInfosBlock}>
                 <div>
@@ -65,21 +93,36 @@ export const InnerComponentTopRight = (props) => {
             </div>
             <div className={s.sliderWrap}>
                 <div className={s.controlsBlock}>
-                    <div className={classNames(s.controlBtn, s.active)}>
+                    <div className={finalFirstContolBtnClass} onClick={() => {
+                        setActiveSlideNumber((prevState => {
+                            changeSlidesNumbers(0, prevState = 2)
+                            return 0
+                        }))
+                    }}>
                         <FontAwesomeIcon icon={faBriefcase}/>
                         <h6>Experience</h6>
                     </div>
-                    <div className={s.controlBtn}>
+                    <div className={finalSecondContolBtnClass} onClick={() => {
+                        setActiveSlideNumber((prevState => {
+                            changeSlidesNumbers(1, prevState)
+                            return 1
+                        }))
+                    }}>
                         <FontAwesomeIcon icon={faGraduationCap}/>
                         <h6>Education</h6>
                     </div>
-                    <div className={s.controlBtn}>
+                    <div className={finalThirdContolBtnClass} onClick={() => {
+                        setActiveSlideNumber((prevState => {
+                            changeSlidesNumbers(2, prevState)
+                            return 2
+                        }))
+                    }}>
                         <FontAwesomeIcon icon={faStar}/>
                         <h6>Skills</h6>
                     </div>
                 </div>
                 <div className={s.slidesBlock}>
-                    <div className={s.slide}>
+                    <div className={firstSlideCommonClass}>
                         <div className={s.resumeCardHeader}>
                             <FontAwesomeIcon icon={faBriefcase}/>
                             <h6>Experience</h6>
@@ -112,7 +155,7 @@ export const InnerComponentTopRight = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className={s.slide}>
+                    <div className={secondSlideCommonClass}>
                         <div className={s.resumeCardHeader}>
                             <FontAwesomeIcon icon={faGraduationCap}/>
                             <h6>Education</h6>
@@ -145,7 +188,7 @@ export const InnerComponentTopRight = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className={s.slide}>
+                    <div className={thirdSlideCommonClass}>
                         <div className={s.resumeCardHeader}>
                             <FontAwesomeIcon icon={faStar}/>
                             <h6>Skills</h6>
@@ -154,7 +197,6 @@ export const InnerComponentTopRight = (props) => {
                             <div className={s.counterContainer}>
                                 <div className={s.row} id="skills-counter">
                                     <div className={s.col}>
-
                                         <div className={s.resumeContent}>
                                             <h6>HTML</h6>
                                             <p data-star="5">
@@ -165,12 +207,22 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">JAVASCRIPT</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>JAVASCRIPT</h6>
+                                            <p className={s.icon} data-star="4.5">
+                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar}/>
+                                                <FontAwesomeIcon icon={faStar}/>
+                                                <FontAwesomeIcon icon={faStar}/>
+                                                <FontAwesomeIcon icon={faStar}/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className={s.col}>
+                                        <div className={s.resumeContent}>
+                                            <h6>CSS</h6>
                                             <p data-star="4.5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -182,23 +234,8 @@ export const InnerComponentTopRight = (props) => {
 
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">CSS</h6>
-                                            <p data-star="4.5">
-                                                <FontAwesomeIcon icon={faStar}/>
-                                                <FontAwesomeIcon icon={faStar}/>
-                                                <FontAwesomeIcon icon={faStar}/>
-                                                <FontAwesomeIcon icon={faStar}/>
-                                                <FontAwesomeIcon icon={faStar}/>
-                                            </p>
-                                        </div>
-
-                                    </div>
-                                    <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">PHP</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>PHP</h6>
                                             <p data-star="3">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -206,12 +243,10 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">JQUERY</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>JQUERY</h6>
                                             <p data-star="5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -223,9 +258,8 @@ export const InnerComponentTopRight = (props) => {
 
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">ANGULAR JS</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>ANGULAR JS</h6>
                                             <p data-star="3">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -237,9 +271,8 @@ export const InnerComponentTopRight = (props) => {
 
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">WORDPRESS</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>WORDPRESS</h6>
                                             <p data-star="4.5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -248,12 +281,10 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">JOOMLA</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>JOOMLA</h6>
                                             <p data-star="3.5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -262,12 +293,10 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">MAGENTO</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>MAGENTO</h6>
                                             <p data-star="4">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -279,9 +308,8 @@ export const InnerComponentTopRight = (props) => {
 
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">DRUPAL</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>DRUPAL</h6>
                                             <p data-star="5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -290,12 +318,10 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">ADOBE PHOTOSHOP</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>ADOBE PHOTOSHOP</h6>
                                             <p data-star="4">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -305,12 +331,10 @@ export const InnerComponentTopRight = (props) => {
 
                                             </p>
                                         </div>
-
                                     </div>
                                     <div className={s.col}>
-
-                                        <div className="resume-content">
-                                            <h6 className="uppercase">ADOBE ILLUSTRATOR</h6>
+                                        <div className={s.resumeContent}>
+                                            <h6>ADOBE ILLUSTRATOR</h6>
                                             <p data-star="3.5">
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
@@ -319,7 +343,6 @@ export const InnerComponentTopRight = (props) => {
                                                 <FontAwesomeIcon icon={faStar}/>
                                             </p>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
