@@ -1,17 +1,17 @@
 import React from "react";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faTimes} from '@fortawesome/free-solid-svg-icons'
-import {faAddressCard} from '@fortawesome/free-solid-svg-icons'
-import {faUser} from '@fortawesome/free-solid-svg-icons'
-import {faFilePdf} from '@fortawesome/free-solid-svg-icons'
-import {faEdit} from '@fortawesome/free-solid-svg-icons'
-import {faBriefcase} from '@fortawesome/free-solid-svg-icons'
-import {faGraduationCap} from '@fortawesome/free-solid-svg-icons'
-import {faCalendar} from '@fortawesome/free-solid-svg-icons'
-
-import {faStar} from '@fortawesome/free-solid-svg-icons'
+import {
+    faAddressCard,
+    faBriefcase,
+    faCalendar,
+    faEdit,
+    faFilePdf,
+    faGraduationCap,
+    faStar,
+    faTimes,
+    faUser
+} from '@fortawesome/free-solid-svg-icons'
 import s from './InnerComponentTopRight.module.scss'
-import {faTimesCircle} from "@fortawesome/free-solid-svg-icons/index";
 
 const classNames = require('classnames');
 

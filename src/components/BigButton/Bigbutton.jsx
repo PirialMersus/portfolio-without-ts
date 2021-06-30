@@ -1,11 +1,19 @@
 import React from "react";
 import s from './Bigbutton.module.scss'
 
+const classNames = require('classnames');
+
 export const BigButton = (props) => {
     return (
         <div className={s.bigButtonContainer}>
-            <p>{props.firstWorld} <span>{props.secondWorld}</span></p>
-            {/*<InnerComponent/>*/}
+            <div>
+                <span
+                    className={s.firstWord}
+                    data-text={props.firstWorld}>{props.firstWorld}</span>&nbsp;
+                <span
+                    className={s.secondWord}
+                    data-text={props.secondWorld}>{props.secondWorld}</span>
+            </div>
         </div>
     )
 }

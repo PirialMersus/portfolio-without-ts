@@ -1,32 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import s from './App.module.scss'
-import joliPhoto from '../src/img/joly.jpg'
 import {BigButton} from "./components/BigButton/Bigbutton";
 import {InnerComponentTopRight} from "./components/InnerComponentTopRight/InnerComponentTopRight";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faTimesCircle} from '@fortawesome/free-solid-svg-icons'
 import {InnerComponentBottomLeft} from "./components/InnerComponentBottomLeft/InnerComponentBottomLeft";
 import {InnerComponentBottomRight} from "./components/InnerComponentBottomRight/InnerComponentBottomRight";
 
-import ReactDOM from 'react-dom'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-library.add(fab, faCheckSquare, faCoffee)
 
 const classNames = require('classnames');
 
 function App() {
 
-    const [appClassName, setClass] = useState(`${s.app} ${s.invisible}`)
+    const [appClassName, setClass] = useState(`${s.app}`)
 
     useEffect(() => {
         setClass(`${s.app} ${s.visible}`)
     }, [])
 
 
-    const [activeBlockNumber, setNumberOfActiveBlock] = useState(2)
+    const [activeBlockNumber, setNumberOfActiveBlock] = useState(1)
     const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
 
     useEffect(() => {
@@ -54,50 +45,57 @@ function App() {
 
     return (
         <div className={appClassName}>
+            <div className={s.wrapForAppear}>
+                <div className={s.first}></div>
+                <div className={s.second}></div>
+            </div>
             <div className={s.mainPicture}>
-                {/*<img src={joliPhoto} alt="Joly" className={s.photo}/>*/}
             </div>
             <div className={s.contentColumn}>
                 <section className={finalFirstBlock_item_Class}>
-                    <div
-                        className={s.miniBlock}
-                        // onClick={() => {setNumberOfActiveBlock(true)}
-                    >
+                    <div className={s.miniBlock}>
                         <p>HI THERE ! I'M</p><h2>LINDA SMITH</h2><p>web designer</p>
                     </div>
                 </section>
-                <section className={finalSecondBlock_item_Class}                >
-                    <div className={s.miniBlock} onClick={() => {
+
+                <section className={finalSecondBlock_item_Class}>
+                    {activeBlockNumber !== 2 && <div className={s.miniBlock} onClick={() => {
                         setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
                     }}>
-                        <h2>about me</h2>
-                    </div>
+                        <BigButton
+                            firstWorld='about'
+                            secondWorld='me'
+                        />
+                    </div>}
                     {numberOfBlockAfterDelay === 2 && <InnerComponentTopRight
                         activeBlockNumber={activeBlockNumber}
                         setNumberOfActiveBlock={setNumberOfActiveBlock}
                     />}
                 </section>
+
                 <section className={finalThirdBlock_item_Class}
                          onClick={() => {
                              setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
-                         }}
-                >
-                    {activeBlockNumber !== 3 ? <div className={s.miniBlock}>
-                            <BigButton firstWorld={'hello'} secondWorld={'world'}/>
-                        </div> :
-                        <InnerComponentBottomLeft/>}
+                         }}>
+                    {activeBlockNumber !== 3 && <div className={s.miniBlock}>
+                        <BigButton firstWorld={'hello'} secondWorld={'world'}/>
+                    </div>}
+                    {numberOfBlockAfterDelay === 3 && <InnerComponentBottomLeft/>}
                 </section>
+
                 <section className={finalFourthBlock_item_Class}
                          onClick={() => {
                              setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
                          }}>
 
-                    <div className={s.miniBlock}>
-                        <h2>get in touch</h2>
-                    </div>
-                    <InnerComponentBottomRight/>
+                    {numberOfBlockAfterDelay !== 4 ? <div className={s.miniBlock}>
+                            <BigButton firstWorld={'lets keep'} secondWorld={'in touch'}/>
+                        </div> :
+                        <InnerComponentBottomRight/>}
+
                 </section>
             </div>
+
         </div>
     )
 }

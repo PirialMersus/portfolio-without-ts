@@ -1,15 +1,78 @@
-.app {
-  transition: all 1s ease;
-  //display: flex;
 
-  &.invisible {
-    transform: scaleX(0);
+.app {
+  position: relative;
+
+  .wrapForAppear {
+    position: absolute;
+    transition: all 2s ease;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    display: flex;
+
+    >div{
+      width: 100%;
+      height: 100%;
+      background-color: #222222;
+    }
+
+
+    //&:before {
+    //  content: '';
+    //  position: absolute;
+    //  left: 0;
+    //  top: 0;
+    //  bottom: 0;
+    //  width: 50%;
+    //  background-color: #222222;
+    //
+    //}
+    //
+    //&:after {
+    //  content: '';
+    //  position: absolute;
+    //  right: 0;
+    //  top: 0;
+    //  bottom: 0;
+    //  width: 50%;
+    //  background-color: #222222;
+    //  //z-index: 999;
+    //}
   }
 
   &.visible {
-    transform: scaleX(1);
 
-    display: flex;
+    .wrapForAppear {
+      &.first{
+        transform: translateX(-2000px);
+      }
+      &.second{
+        transform: translateX(2000px);
+      }
+      //transform: translateX(-100%);
+      //&:before {
+      //  transform: translateX(-100%);
+      //}
+
+      //
+      //&:after {
+      //  transform: translateX(100%);
+      //}
+    }
+
+    //&:before.visible, &:after.visible {
+    //  width: 0;
+    //}
+    //
+    //&.invisible,  &.visible{
+    //  //transform: scaleX(0);
+    //}
+
+
+    //transform: scaleX(1);
 
     .mainPicture {
       background-image: url('/img/joly.jpg');
@@ -86,7 +149,7 @@
           top: 24px;
           left: 0;
           //background: #bab3b3;
-          overflow: scroll;
+          overflow: auto;
         }
 
         &.deactiveItem {
@@ -104,17 +167,12 @@
         .miniBlock {
           height: 100%;
           width: 100%;
-          h2 {
-            font-size: 30px;
-            color: #2f5b2f;
-          }
         }
       }
-
-
     }
   }
 }
+
 
 .fontAwesome {
   position: absolute;
