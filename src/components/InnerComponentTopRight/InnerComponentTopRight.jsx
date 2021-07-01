@@ -15,33 +15,47 @@ import s from './InnerComponentTopRight.module.scss'
 
 const classNames = require('classnames');
 
+
 export const InnerComponentTopRight = (props) => {
 
+    const initSlidesNames = ['active', 'neutral', 'passive']
+
     const [activeSlideNumber, setActiveSlideNumber] = React.useState(0)
+    const [slides, setSlides] = React.useState(initSlidesNames)
 
 
     const finalFirstContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 0 && s.active}`
     const finalSecondContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 1 && s.active}`
     const finalThirdContolBtnClass = `${s.controlBtn} ${activeSlideNumber === 2 && s.active}`
 
-    const slides = ['active', 'neutral', 'passive']
+    // const slides = ['active', 'neutral', 'passive']
 
 
     function changeSlidesNumbers(slide, prevState) {
         // debugger
-        slides[slide] = 'active'
-        slides[prevState] = 'neutral'
-        slides.map((slide, index) => {
-                if (index !== slide && index !== prevState) {
-                    slides[index] = 'passive'
+        let indexPrevActiveElem;
+        prevState.find((el, index) => {
+            if (el === 'active') {
+                indexPrevActiveElem = index;
+            }
+        })
+
+        const tempSlides = []
+        tempSlides.length = 3
+        tempSlides[slide] = 'active'
+        tempSlides[indexPrevActiveElem] = 'neutral'
+        tempSlides.map((slide, index) => {
+                if ('active' !== slide && 'neutral' !== slide) {
+                    tempSlides[index] = 'passive'
                 }
             }
         )
+        return tempSlides
     }
 
-    const firstSlideCommonClass = `${s.slide} ${slides[0]}`
-    const secondSlideCommonClass = `${s.slide} ${slides[1]}`
-    const thirdSlideCommonClass = `${s.slide} ${slides[2]}`
+    const firstSlideCommonClass = `${s.slide} ${s[slides[0]]}`
+    const secondSlideCommonClass = `${s.slide} ${s[slides[1]]}`
+    const thirdSlideCommonClass = `${s.slide} ${s[slides[2]]}`
 
 
     return (
@@ -94,10 +108,9 @@ export const InnerComponentTopRight = (props) => {
             <div className={s.sliderWrap}>
                 <div className={s.controlsBlock}>
                     <div className={finalFirstContolBtnClass} onClick={() => {
-                        setActiveSlideNumber((prevState => {
-                            changeSlidesNumbers(0, prevState = 2)
-                            return 0
-                        }))
+                        setSlides(prevState => {
+                            changeSlidesNumbers(0, prevState = initSlidesNames)
+                        })
                     }}>
                         <FontAwesomeIcon icon={faBriefcase}/>
                         <h6>Experience</h6>
@@ -212,7 +225,7 @@ export const InnerComponentTopRight = (props) => {
                                         <div className={s.resumeContent}>
                                             <h6>JAVASCRIPT</h6>
                                             <p className={s.icon} data-star="4.5">
-                                                <FontAwesomeIcon icon={faStar} />
+                                                <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>
                                                 <FontAwesomeIcon icon={faStar}/>

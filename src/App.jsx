@@ -46,8 +46,8 @@ function App() {
     return (
         <div className={appClassName}>
             <div className={s.wrapForAppear}>
-                <div className={s.first}></div>
-                <div className={s.second}></div>
+                {/*<div className={s.first}></div>*/}
+                {/*<div className={s.second}></div>*/}
             </div>
             <div className={s.mainPicture}>
             </div>
