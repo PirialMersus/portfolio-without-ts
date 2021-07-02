@@ -63,8 +63,8 @@ function App() {
                         setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
                     }}>
                         <BigButton
-                            firstWorld='about'
-                            secondWorld='me'
+                            firstWorld='ABOUT'
+                            secondWorld='ME'
                         />
                     </div>}
                     {numberOfBlockAfterDelay === 2 && <InnerComponentTopRight
@@ -78,7 +78,7 @@ function App() {
                              setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
                          }}>
                     {activeBlockNumber !== 3 && <div className={s.miniBlock}>
-                        <BigButton firstWorld={'hello'} secondWorld={'world'}/>
+                        <BigButton firstWorld={'MY'} secondWorld={'PORTFOLIO'}/>
                     </div>}
                     {numberOfBlockAfterDelay === 3 && <InnerComponentBottomLeft/>}
                 </section>

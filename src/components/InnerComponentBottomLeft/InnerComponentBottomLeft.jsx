@@ -3,6 +3,6 @@ import s from './InnerComponentBottomLeft.module.scss'
 
 export const InnerComponentBottomLeft = () => {
     return (
-        <div className={s.wrap}><h2>InnerComponentBottomLeft</h2></div>
+        <div className={s.content}><h2>InnerComponentBottomLeft</h2></div>
     )
 }

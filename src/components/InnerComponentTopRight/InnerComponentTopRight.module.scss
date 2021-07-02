@@ -10,7 +10,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #d1f1d1;
 
   h2 {
     text-align: center;
@@ -165,7 +164,9 @@
 
   .sliderWrap {
 
+
     display: flex;
+    height: 770px;
 
     .controlsBlock {
       padding: 0 24px;
@@ -208,164 +209,178 @@
 
     }
 
-    .slidesBlock {
-      width: 66.6666666667%;
-      height: 600px;
+    .slidesBlockWrap {
       margin-left: auto;
       left: auto;
       right: auto;
-      padding: 0 24px !important;
-      position: relative;
+      padding: 90px 24px 0;
+      width: 66.6666666667%;
 
-      .slide {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        color: black;
-        box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+      .slidesBlock {
+        position: relative;
+        height: 100%;
+        width: 100%;
 
-        &.active {
-          opacity: 0.9;
-          z-index: 5;
-        }
+        .slide {
+          position: absolute;
+          height: max-content;
 
-        &.neutral {
-          color: green;
-          z-index: 15;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          color: black;
+          box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+          transition: all 0.3s ease;
+          background-color: white;
 
-        }
+          &.active {
+            z-index: 25;
+          }
 
-        &.passive {
-          color: blue;
-          transform: scale(1.1);
-          z-index: 25;
+          &.neutral {
+            z-index: 15;
+            transform: scale(0.9) translateY(-75px);
 
-        }
+            &:hover {
+              transform: scale(0.9) translateY(-90px);
+              cursor: pointer;
+            }
+          }
 
-        .resumeCardHeader {
-          text-transform: uppercase;
-          font-weight: bold;
-          font-size: 21px;
-          padding: 24px;
-          text-align: center;
-          background: #f2f2f2;
-          border-bottom: 1px solid #ddd;
+          &.passive {
+            transform: scale(0.8) translateY(-150px);
+            z-index: 5;
 
-          h6 {
-            display: inline-block;
-            //text-transform: uppercase;
+            &:hover {
+              transform: scale(0.8) translateY(-165px);
+              cursor: pointer;
+            }
+          }
+
+          .resumeCardHeader {
+            text-transform: uppercase;
             font-weight: bold;
             font-size: 21px;
-          }
-        }
-
-        .resumeCardBody {
-
-          .experience {
             padding: 24px;
-            display: flex;
-            flex-flow: column;
+            text-align: center;
+            background: #f2f2f2;
+            border-bottom: 1px solid #ddd;
 
-            .resumeContent {
-              position: relative;
-              //color: red;
-
-              .icon {
-                color: blue;
-              }
-
-              h6 {
-                margin-bottom: 10px;
-                font-size: 15px;
-                margin-top: 0;
-                text-transform: uppercase;
-                line-height: 110%;
-                font-weight: 400;
-
-                > span {
-                  //margin-left: 10px;
-                  font-weight: 600;
-                }
-
-              }
-
-              > span {
-                font-weight: 400;
-                color: #aaa;
-                font-size: 13px;
-
-                svg {
-                  //padding-right: 10px;
-                  //color: white;
-                }
-
-                > span {
-                  margin-left: 10px;
-                }
-
-              }
-
-              > p {
-                font-size: 14px;
-                padding-bottom: 20px;
-                margin-top: 5px;
-                line-height: 2;
-              }
-            }
-
-            .separator {
-              height: 2px;
-              width: 70px;
-              margin-bottom: 24px;
-              background: #ffb400;
+            h6 {
+              display: inline-block;
+              //text-transform: uppercase;
+              font-weight: bold;
+              font-size: 21px;
             }
           }
 
-          .counterContainer {
-            padding: 24px;
-            display: flex;
-            flex-flow: column;
+          .resumeCardBody {
 
-            .row {
-              margin-left: -.75rem;
-              margin-right: -.75rem;
-              margin-bottom: 20px;
+            .experience {
+              padding: 24px;
+              display: flex;
+              flex-flow: column;
 
-              &:after {
-                content: " ";
-                display: table;
-                clear: both;
-              }
+              .resumeContent {
+                position: relative;
+                //color: red;
 
-              .col {
-                float: left;
-                padding: 0 .75rem;
-                min-height: 1px;
-                width: 50% !important;
+                .icon {
+                  color: blue;
+                }
 
-                .resumeContent {
-                  position: relative;
+                h6 {
+                  margin-bottom: 10px;
+                  font-size: 15px;
+                  margin-top: 0;
+                  text-transform: uppercase;
+                  line-height: 110%;
+                  font-weight: 400;
 
-                  > h6 {
-                    font-size: 15px;
-                    margin-top: 0;
-                    text-transform: uppercase;
-                    line-height: 110%;
-                    margin: .7666666667rem 0 .46rem 0;
+                  > span {
+                    //margin-left: 10px;
+                    font-weight: 600;
                   }
 
-                  > p {
-                    font-size: 14px;
-                    padding-bottom: 20px;
-                    margin: 0 auto;
-                    margin-top: 5px;
-                    color: #ffb400;
-                    line-height: 2;
-                    //color: #656c6d;
-                    font-weight: 400;
+                }
 
+                > span {
+                  font-weight: 400;
+                  color: #aaa;
+                  font-size: 13px;
+
+                  svg {
+                    //padding-right: 10px;
+                    //color: white;
+                  }
+
+                  > span {
+                    margin-left: 10px;
+                  }
+
+                }
+
+                > p {
+                  font-size: 14px;
+                  padding-bottom: 20px;
+                  margin-top: 5px;
+                  line-height: 2;
+                }
+              }
+
+              .separator {
+                height: 2px;
+                width: 70px;
+                margin-bottom: 24px;
+                background: #ffb400;
+              }
+            }
+
+            .counterContainer {
+              padding: 24px;
+              display: flex;
+              flex-flow: column;
+
+              .row {
+                margin-left: -.75rem;
+                margin-right: -.75rem;
+                //margin-bottom: 20px;
+
+                &:after {
+                  content: " ";
+                  display: table;
+                  clear: both;
+                }
+
+                .col {
+                  float: left;
+                  padding: 0 .75rem;
+                  min-height: 1px;
+                  width: 50% !important;
+
+                  .resumeContent {
+                    position: relative;
+
+                    > h6 {
+                      font-size: 15px;
+                      margin-top: 0;
+                      text-transform: uppercase;
+                      line-height: 110%;
+                      margin: .7666666667rem 0 .46rem 0;
+                    }
+
+                    > p {
+                      font-size: 14px;
+                      padding-bottom: 20px;
+                      margin: 0 auto;
+                      margin-top: 5px;
+                      color: #ffb400;
+                      line-height: 2;
+                      //color: #656c6d;
+                      font-weight: 400;
+
+                    }
                   }
                 }
               }
@@ -374,6 +389,7 @@
         }
       }
     }
+
   }
 
   .closeButton {
