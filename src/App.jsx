@@ -26,7 +26,6 @@ function App() {
         }, 1000)
     }, [activeBlockNumber])
 
-
     const finalFirstBlock_item_Class = classNames(s.item, s.topLeft, {
         [s.deactiveItem]: activeBlockNumber !== 1
     })

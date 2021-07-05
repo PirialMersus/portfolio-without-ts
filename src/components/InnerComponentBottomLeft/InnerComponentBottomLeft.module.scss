@@ -1,69 +1,20 @@
 .wrap {
-  background: #9aea98;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  h2 {
+    font-size: 55px;
+    color: #666;
+    text-align: center;
+    //
+    //span:nth-child(1) {
+    //
+    //}
 
-  .photoWrap {
-    height: 100px;
-    width: 100px;
-    background-color: #fffbf9;
-    position: relative;
-    overflow: hidden;
-
-    > div {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transition: 1s all ease;
-
-      &.active {
-        transform: translate(0, 0);
-
-        &.top {
-          transform: translateY(-100%);
-        }
-
-        &.bottom {
-          transform: translateY(100%);
-        }
-
-        &.left {
-          transform: translateX(-100%);
-        }
-
-        &.right {
-          transform: translateX(100%);
-        }
-      }
-
-
+    span:nth-child(2) {
+      color: #ffb400;
     }
+  }
 
-    .squareTop {
-      background-color: #dec162;
-      transform: translateY(-100%);
-
-    }
-
-    .squareBottom {
-      background-color: #dec162;
-      transform: translateY(100%);
-    }
-
-    .squareLeft {
-      background-color: #dec162;
-      transform: translateX(-100%);
-    }
-
-    .squareRight {
-      background-color: #dec162;
-      transform: translateX(100%);
-
-    }
+  .imagesWrap{
+    display: flex;
+    flex-wrap: wrap;
   }
 }
