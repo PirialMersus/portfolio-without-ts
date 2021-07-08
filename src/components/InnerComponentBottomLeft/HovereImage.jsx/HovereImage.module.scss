@@ -2,14 +2,15 @@
   background: #9aea98;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  padding: 10px  ;
 
   .photoWrap {
-    height: 100px;
-    width: 100px;
-    background-color: #fffbf9;
+    height: 100%;
+    width: 100%;
+    background-color: #909acd;
     position: relative;
     overflow: hidden;
 
@@ -47,23 +48,23 @@
     }
 
     .squareTop {
-      background-color: #dec162;
+      background-color: #ffb400;
       transform: translateY(-100%);
 
     }
 
     .squareBottom {
-      background-color: #dec162;
+      background-color: #ffb400;
       transform: translateY(100%);
     }
 
     .squareLeft {
-      background-color: #dec162;
+      background-color: #ffb400;
       transform: translateX(-100%);
     }
 
     .squareRight {
-      background-color: #dec162;
+      background-color: #ffb400;
       transform: translateX(100%);
 
     }

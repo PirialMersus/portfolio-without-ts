@@ -3,7 +3,7 @@ import s from './HovereImage.module.scss'
 
 const classNames = require('classnames');
 
-export const HoveredImage = () => {
+export const HoveredImage = React.memo((props) => {
 
     const [activeWrap, setActiveWrap] = useState('')
     const [passiveWrap, setPassiveWrap] = useState('')
@@ -59,6 +59,10 @@ export const HoveredImage = () => {
     }
 
     const onMouseLeaveHandler = (e) => {
+
+        // movementX = e.movementX
+        // movementY = e.movementY
+
         if (movementX !== 0 && movementY !== 0) {
             if (Math.abs(movementX) > Math.abs(movementY)) {
                 findDirectionOnLeave(movementX, 0)
@@ -81,36 +85,38 @@ export const HoveredImage = () => {
                  onMouseLeave={onMouseLeaveHandler}
                  onMouseMove={onMouseMoveHandler}
             >
+                <img src={props.image} alt="image"/>
                 <div className={classNames(s.squareTop, {
                     [s.active]: activeWrap === 'top',
                     [s.top]: passiveWrap === 'top',
                     [s.bottom]: passiveWrap === 'bottom',
                     [s.left]: passiveWrap === 'left',
                     [s.right]: passiveWrap === 'right',
-                })}/>
+                })}><h4>{props.title}</h4></div>
                 <div className={classNames(s.squareBottom, {
                     [s.active]: activeWrap === 'bottom',
                     [s.top]: passiveWrap === 'top',
                     [s.bottom]: passiveWrap === 'bottom',
                     [s.left]: passiveWrap === 'left',
                     [s.right]: passiveWrap === 'right',
-                })}/>
+                })}><h4>{props.title}</h4></div>
                 <div className={classNames(s.squareLeft, {
                     [s.active]: activeWrap === 'left',
                     [s.top]: passiveWrap === 'top',
                     [s.bottom]: passiveWrap === 'bottom',
                     [s.left]: passiveWrap === 'left',
                     [s.right]: passiveWrap === 'right',
-                })}/>
+                })}><h4>{props.title}</h4></div>
                 <div className={classNames(s.squareRight, {
                     [s.active]: activeWrap === 'right',
                     [s.top]: passiveWrap === 'top',
                     [s.bottom]: passiveWrap === 'bottom',
                     [s.left]: passiveWrap === 'left',
                     [s.right]: passiveWrap === 'right',
-                })}/>
+                })}><h4>{props.title}</h4>
+                </div>
             </div>
 
         </div>
     )
-}
+})
