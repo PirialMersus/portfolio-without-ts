@@ -1,0 +1,72 @@
+.wrap {
+  background: #9aea98;
+  height: 100%;
+  width: 100%;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  padding: 10px  ;
+
+  .photoWrap {
+    height: 100%;
+    width: 100%;
+    background-color: #909acd;
+    position: relative;
+    overflow: hidden;
+
+    > div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+
+
+      &.active {
+        transition: 0.3s all ease;
+        transform: translate(0, 0);
+
+        &.top {
+          transform: translateY(-100%);
+        }
+
+        &.bottom {
+          transform: translateY(100%);
+        }
+
+        &.left {
+          transform: translateX(-100%);
+        }
+
+        &.right {
+          transform: translateX(100%);
+        }
+      }
+
+
+    }
+
+    .squareTop {
+      background-color: #ffb400;
+      transform: translateY(-100%);
+
+    }
+
+    .squareBottom {
+      background-color: #ffb400;
+      transform: translateY(100%);
+    }
+
+    .squareLeft {
+      background-color: #ffb400;
+      transform: translateX(-100%);
+    }
+
+    .squareRight {
+      background-color: #ffb400;
+      transform: translateX(100%);
+
+    }
+  }
+}

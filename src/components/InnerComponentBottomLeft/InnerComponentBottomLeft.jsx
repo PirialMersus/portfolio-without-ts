@@ -14,80 +14,7 @@ import boat from '../../img/userAva.jpg'
 // const classNames = require('classnames');
 
 export const InnerComponentBottomLeft = () => {
-    //............................................
-    const [activeWrap, setActiveWrap] = useState('')
-    const [passiveWrap, setPassiveWrap] = useState('')
 
-    let movementX;
-    let movementY;
-
-    let watchMode = false
-    let editModeMode = true
-
-    const findDirectionOnLeave = (movementX, movementY) => {
-        if (movementX < 0 && movementY === 0) {
-            setPassiveWrap('left')
-        }
-        if (movementX === 0 && movementY < 0) {
-            setPassiveWrap('top')
-        }
-        if (movementX > 0 && movementY === 0) {
-            setPassiveWrap('right')
-        }
-        if (movementX === 0 && movementY > 0) {
-            setPassiveWrap('bottom')
-        }
-    }
-
-    const onMouseEnterHandler = (e) => {
-        watchMode = true
-    }
-
-    const onMouseMoveHandler = (e) => {
-
-        movementX = e.movementX
-        movementY = e.movementY
-
-        if (movementX !== 0 && movementY !== 0) {
-            return
-        }
-        if (editModeMode && watchMode) {
-            if (movementX > 0 && movementY === 0) {
-                setActiveWrap('left')
-            }
-            if (movementX === 0 && movementY > 0) {
-                setActiveWrap('top')
-            }
-            if (movementX < 0 && movementY === 0) {
-                setActiveWrap('right')
-            }
-            if (movementX === 0 && movementY < 0) {
-                setActiveWrap('bottom')
-            }
-            setPassiveWrap('')
-        }
-    }
-
-    const onMouseLeaveHandler = (e) => {
-
-        // movementX = e.movementX
-        // movementY = e.movementY
-
-        if (movementX !== 0 && movementY !== 0) {
-            if (Math.abs(movementX) > Math.abs(movementY)) {
-                findDirectionOnLeave(movementX, 0)
-            } else {
-                findDirectionOnLeave(0, movementY)
-            }
-
-        } else {
-            // console.log(movementX, movementY)
-            findDirectionOnLeave(movementX, movementY)
-        }
-        watchMode = false
-        editModeMode = true
-    }
-    //////////////.................................................
     return (
         <div className={s.wrap}>
             <h2>
@@ -105,50 +32,48 @@ export const InnerComponentBottomLeft = () => {
                 <div><HoveredImage
                     title='first block'
                     image={townImage}
-                    onMouseLeaveHandler={onMouseLeaveHandler}
-                    onMouseLeaveHandler={onMouseLeaveHandler}
                 />
                     </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={sunEarth}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={face}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={yoga}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={sanya}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={shavasana}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={statue}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={space}
-                    />
-                    </div>
-                    <div><HoveredImage
-                        title='first block'
-                        image={boat}
-                    />
-                </div>
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={sunEarth}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={face}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={yoga}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={sanya}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={shavasana}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={statue}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={space}*/}
+                {/*    />*/}
+                {/*    </div>*/}
+                {/*    <div><HoveredImage*/}
+                {/*        title='first block'*/}
+                {/*        image={boat}*/}
+                {/*    />*/}
+                {/*</div>*/}
             </div>
         </div>
     )
