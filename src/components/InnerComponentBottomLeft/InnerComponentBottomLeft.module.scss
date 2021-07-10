@@ -16,15 +16,15 @@
   }
 
   .imagesWrap{
-    display: flex;
-    flex-wrap: wrap;
+    //display: flex;
+    //flex-wrap: wrap;
     >div {
-      width: 33.3333333333%;
-      height: 150px;
-      image {
-        width: 100%;
-        height: auto;
-      }
+      //width: 33.3333333333%;
+      //height: 150px;
+      //image {
+      //  width: 100%;
+      //  height: auto;
+      //}
     }
   }
 }

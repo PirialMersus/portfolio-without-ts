@@ -1,72 +1,166 @@
-.wrap {
+.container {
   background: #9aea98;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   //display: flex;
   //justify-content: center;
   //align-items: center;
-  padding: 10px  ;
+  //padding: 10px;
 
-  .photoWrap {
-    height: 100%;
-    width: 100%;
-    background-color: #909acd;
+  .card {
+    height: 420px;
+    width: 320px;
+    //background-color: #909acd;
     position: relative;
     overflow: hidden;
+    margin: 15px;
 
-    > div {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-
-
-      &.active {
-        transition: 0.3s all ease;
-        transform: translate(0, 0);
-
-        &.top {
-          transform: translateY(-100%);
-        }
-
-        &.bottom {
-          transform: translateY(100%);
-        }
-
-        &.left {
-          transform: translateX(-100%);
-        }
-
-        &.right {
-          transform: translateX(100%);
+    &:hover {
+      .content{
+        div {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0px);
         }
       }
-
-
     }
 
-    .squareTop {
-      background-color: #ffb400;
-      transform: translateY(-100%);
+    .imgBox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
 
+      .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
 
-    .squareBottom {
-      background-color: #ffb400;
-      transform: translateY(100%);
-    }
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    .squareLeft {
-      background-color: #ffb400;
-      transform: translateX(-100%);
-    }
+      div {
+        padding: 40px;
+        color: white;
+        transition: 0.2s;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(50px);
 
-    .squareRight {
-      background-color: #ffb400;
-      transform: translateX(100%);
-
+        h3 {
+          color: white;
+        }
+      }
     }
+    .span{
+      position: absolute;
+      display: block;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      opacity: 0.95;
+      background: #ffb400;
+      z-index: 1;
+    }
+    //
+    //&:before {
+    //  content: "";
+    //  position: absolute;
+    //  //z-index: 999;
+    //  top: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //  width: 20px;
+    //  height: 20px;
+    //  border-radius: 50%;
+    //  background-color: #ffb400;
+    //  transition: width 0.5s, height 0.5s;
+    //}
+    //
+    //&:hover::before {
+    //  width: 300px;
+    //  height: 300px;
+    //}
+
+    //.image {
+    //  //position: relative;
+    //  width: 100%;
+    //  height: 100%;
+    //  display: block;
+    //
+    //}
+
+    //> div {
+    //  position: absolute;
+    //  top: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //  z-index: 100;
+
+
+    //&.active {
+    //  transition: 0.3s all ease;
+    //  transform: translate(0, 0);
+    //
+    //  &.top {
+    //    transform: translateY(-100%);
+    //  }
+    //
+    //  &.bottom {
+    //    transform: translateY(100%);
+    //  }
+    //
+    //  &.left {
+    //    transform: translateX(-100%);
+    //  }
+    //
+    //  &.right {
+    //    transform: translateX(100%);
+    //  }
+    //}
+
+
+    //}
+
+    //.squareTop {
+    //  background-color: #ffb400;
+    //  transform: translateY(-100%);
+    //
+    //}
+    //
+    //.squareBottom {
+    //  background-color: #ffb400;
+    //  transform: translateY(100%);
+    //}
+    //
+    //.squareLeft {
+    //  background-color: #ffb400;
+    //  transform: translateX(-100%);
+    //}
+    //
+    //.squareRight {
+    //  background-color: #ffb400;
+    //  transform: translateX(100%);
+    //
+    //}
   }
 }
