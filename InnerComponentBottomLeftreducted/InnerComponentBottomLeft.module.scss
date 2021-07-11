@@ -1,0 +1,30 @@
+.wrap {
+  overflow: auto;
+
+  h2 {
+    font-size: 55px;
+    color: #666;
+    text-align: center;
+    //
+    //span:nth-child(1) {
+    //
+    //}
+
+    span:nth-child(2) {
+      color: #ffb400;
+    }
+  }
+
+  .imagesWrap{
+    //display: flex;
+    //flex-wrap: wrap;
+    >div {
+      //width: 33.3333333333%;
+      //height: 150px;
+      //image {
+      //  width: 100%;
+      //  height: auto;
+      //}
+    }
+  }
+}

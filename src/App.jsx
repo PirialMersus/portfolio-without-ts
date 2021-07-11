@@ -73,9 +73,10 @@ function App() {
                 </section>
 
                 <section className={finalThirdBlock_item_Class}
-                         onClick={() => {
-                             setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
-                         }}>
+                         // onClick={() => {
+                         //     setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
+                         // }}
+                >
                     {activeBlockNumber !== 3 && <div className={s.miniBlock}>
                         <BigButton firstWorld={'MY'} secondWorld={'PORTFOLIO'}/>
                     </div>}
