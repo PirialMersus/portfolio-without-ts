@@ -116,41 +116,65 @@
     }
   }
 
-  .sliderContainer {
-    padding-bottom: 30px;
-    .aws-sld {
-      &--exit {
-        &.aws-sld--moveRight, &.aws-sld--moveLeft {
-          animation: scaleOut var(--slider-transition-duration) both var(--transition-bezier);
-        }
-      }
-    }
-
-
-    .aws-btn {
-
-      --slider-height-percentage: 60%;
-      --slider-transition-duration: 323ms;
-      --organic-arrow-thickness: 6px;
-      --organic-arrow-border-radius: 0px;
-      --organic-arrow-height: 40px;
-      --organic-arrow-color: #8b9db1;
-      --control-button-width: 10%;
-      --control-button-height: 25%;
-      --control-button-background: transparent;
-      --control-bullet-color: #d63b6b;
-      --control-bullet-active-color: #b6325b;
-      --loader-bar-color: #851515;
-      --loader-bar-height: 6px;
-    }
+  .sliderWrapper {
+  //  transform-style: preserve-3d;
+  //
+  //  button {
+  //    color: green !important;
+  //  }
+  //  button::before{
+  //    color: #9aea98;
+  //  }
+  //  button::after{
+  //    color: #9aea98 !important;
+  //  }
+  //  //padding-bottom: 30px;
+  //  .aws-sld {
+  //    &--exit {
+  //      &.aws-sld--moveRight, &.aws-sld--moveLeft {
+  //        animation: scaleOut var(--slider-transition-duration) both var(--transition-bezier);
+  //      }
+  //    }
+  //  }
+  //
+  //
+  //  .aws-btn {
+  //
+  //    --slider-height-percentage: 60%;
+  //    --slider-transition-duration: 500ms;
+  //    --organic-arrow-thickness: 6px;
+  //    --organic-arrow-border-radius: 0px;
+  //    --organic-arrow-height: 40px;
+  //    --organic-arrow-color: #b11f1f;
+  //    --control-button-width: 10%;
+  //    --control-button-height: 25%;
+  //    --control-button-background: transparent;
+  //    --control-bullet-color: #d63b6b;
+  //    --control-bullet-active-color: #b6325b;
+  //    --loader-bar-color: #851515;
+  //    --loader-bar-height: 6px;
+  //  }
+  //}
+  //  .awssld__controls__arrow-left:before,.awssld__controls__arrow-left:after {
+  //    background-color: red;
+  //  }
   }
 }
 
-.title {
+.titleBackground {
   position: absolute;
-  top: 30px;
-  left: 30px;
-  z-index: 999;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background-color: #9aea98;
+  //z-index: 999;
+  transform-style: preserve-3d;
+  transform: translateX(300px);
+
+  .title {
+
+  }
 }
 
 @keyframes scaleOut {
