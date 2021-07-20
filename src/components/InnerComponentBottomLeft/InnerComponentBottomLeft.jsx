@@ -43,31 +43,37 @@ const images = [
 // --loader-bar-color: '#851515',
 // --loader-bar-height: '6px'
 // }
-const cssModule = {
-    '--sliderHeightPercentage': '60%',
-    '--sliderTransitionDuration': '500ms',
-    '--organicArrowThickness': '6px',
-    '--organicArrowBorderRadius': '0px',
-    '--organicArrowHeight': '40px',
-    '--organicArrowColor': '#b1a413',
-    '--controlButtonWidth': '10%',
-    '--controlButtonHeight': '25%',
-    '--controlButtonBackground': 'transparent',
-    '--controlBulletColor': '#c7d667',
-    '--controlBulletActiveColor': '#77b631',
-    '--loaderBarColor': '#852f43',
-    '--loaderBarHeight': '6px'
-}
+// const cssModule = {
+//     '--sliderHeightPercentage': '60%',
+//     '--sliderTransitionDuration': '500ms',
+//     '--organicArrowThickness': '6px',
+//     '--organicArrowBorderRadius': '0px',
+//     '--organicArrowHeight': '40px',
+//     '--organicArrowColor': '#b1a413',
+//     '--controlButtonWidth': '10%',
+//     '--controlButtonHeight': '25%',
+//     '--controlButtonBackground': 'transparent',
+//     '--controlBulletColor': '#c7d667',
+//     '--controlBulletActiveColor': '#77b631',
+//     '--loaderBarColor': '#852f43',
+//     '--loaderBarHeight': '6px'
+// }
 
-const Slider = styled(AwesomeSlider)`
- .awssld__controls__arrow-left:before, 
- .awssld__controls__arrow-left:after {
-    background-color: red;
-    }
-`
+// const Slider = styled(AwesomeSlider)`
+//  .awssld__controls__arrow-left:before,
+//  .awssld__controls__arrow-left:after {
+//     background-color: red;
+//     }
+// `
+
 
 export const InnerComponentBottomLeft = () => {
-    const inputRef = React.useRef(null)
+    // const inputRef = React.useRef(null)
+    const [activeSlide, setActiveSlide] = useState(-1)
+
+    const showSlider = (index) => {
+        setActiveSlide(index)
+    }
 
     return (
         <div className={s.wrap}>
@@ -83,8 +89,11 @@ export const InnerComponentBottomLeft = () => {
 
             </div>
             <div className={s.imagesContainer}>
-                {images.map(el => (
-                    <div className={s.card}
+                {images.map((el, index) => (
+                    <div className={s.card} key={index}
+                         onClick={() => {
+                             showSlider(index)
+                         }}
                     >
                         <div className={s.box}>
                             <div className={s.imgBx}>
@@ -99,7 +108,9 @@ export const InnerComponentBottomLeft = () => {
                     </div>
                 ))}
             </div>
-            <div className='sliderWrapper'>
+            <div
+                className={`${s.sliderWrapper} ${activeSlide !== -1 && s.activeSlider}`}
+            >
                 {/*<AwesomeSlider cssModule={AwesomeSliderStyles}>*/}
                 {/*    <div data-src={townImage}/>*/}
                 {/*    <div data-src={face}/>*/}
@@ -108,32 +119,46 @@ export const InnerComponentBottomLeft = () => {
                 {/*</AwesomeSlider>*/}
                 <AwesomeSlider
                     organicArrows
-                    className={s.sliderContainer}
-                    style={cssModule}
-                    selected={0}
+                    className='sliderWrapper'
+                    // style={cssModule}
+                    selected={activeSlide}
                     animation="foldOutAnimation"
                     cssModule={[CoreStyles, AnimationStyles]}
                 >
                     <div data-src={space}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={face}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={boat}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={townImage}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={shavasana}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={statue}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                     <div data-src={sunEarth}>
-                        <div className={s.titleBackground}><p className={s.title}>hello gues</p></div>
+                        <div className={s.titleBackground} onClick={() => {
+                            setActiveSlide(-1)
+                        }}><p className={s.title}>hello gues</p></div>
                     </div>
                 </AwesomeSlider>
             </div>
