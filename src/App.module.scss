@@ -3,23 +3,13 @@
   position: relative;
 
   .wrapForAppear {
-    position: absolute;
-    transition: all 2s ease;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
-
-    display: flex;
-
-    //> div {
-    //  width: 100%;
-    //  height: 100%;
-    //  background-color: #222222;
-    //  //display: inline;
-    //}
-
+    z-index: 100;
+    transition: all 1s ease;
 
     &:before {
       content: '';
@@ -30,6 +20,7 @@
       width: 50%;
       background-color: #222222;
       display: block;
+      transition: all 1s ease;
 
     }
 
@@ -42,27 +33,19 @@
       bottom: 0;
       width: 50%;
       background-color: #222222;
-      //z-index: 999;
+      transition: all 1s ease;
     }
   }
 
   &.visible {
 
     .wrapForAppear {
-      display: none;
-      //&.first {
-      //  transform: translateX(-2000px);
-      //}
-      //
-      //&.second {
-      //  transform: translateX(2000px);
-      //}
+      z-index: -1;
 
-      //transform: translateX(-100%);
       &:before {
         transform: translateX(-100%);
-        width: 0;
-        display: none;
+        //width: 0;
+        //display: none;
         //
 
       }
@@ -70,8 +53,8 @@
 
       &:after {
         transform: translateX(100%);
-        width: 0;
-        display: none;
+        //width: 0;
+        //display: none;
 
       }
     }

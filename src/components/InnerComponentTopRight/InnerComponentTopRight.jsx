@@ -12,6 +12,7 @@ import {
     faUser
 } from '@fortawesome/free-solid-svg-icons'
 import s from './InnerComponentTopRight.module.scss'
+import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 
 const classNames = require('classnames');
 
@@ -63,7 +64,7 @@ export const InnerComponentTopRight = (props) => {
     }
 
     return (
-        <div className={classNames(s.wrap, {[s.invisible]: props.activeBlockNumber !== 2})}>
+        <div className={classNames(s.container, {[s.invisible]: props.activeBlockNumber !== 2})}>
             <h2>Hello, guys</h2>
             <div className={s.divideLineBlock}>
                 <div className={s.line}/>
@@ -110,6 +111,7 @@ export const InnerComponentTopRight = (props) => {
                 </a>
             </div>
             <div className={s.sliderWrap}>
+
                 <div className={s.controlsBlock}>
                     {buttonsNames.map((button, idx) => (
                         <div className={`${s.controlBtn} ${activeSlideNumber === idx && s.active}`}
@@ -120,34 +122,8 @@ export const InnerComponentTopRight = (props) => {
                             <h6>{button}</h6>
                         </div>
                     ))}
-                    {/*<div className={finalFirstContolBtnClass} onClick={() => {*/}
-                    {/*    setSlides(prevState => {*/}
-                    {/*        changeSlidesNumbers(0, prevState = initSlidesNames)*/}
-                    {/*        setActiveSlideNumber(0)*/}
-                    {/*    })*/}
-                    {/*}}>*/}
-                    {/*    <FontAwesomeIcon icon={faBriefcase}/>*/}
-                    {/*    <h6>Experience</h6>*/}
-                    {/*</div>*/}
-                    {/*<div className={finalSecondContolBtnClass} onClick={() => {*/}
-                    {/*    setSlides((prevState => {*/}
-                    {/*        changeSlidesNumbers(1, prevState = initSlidesNames)*/}
-                    {/*        setActiveSlideNumber(1)*/}
-                    {/*    }))*/}
-                    {/*}}>*/}
-                    {/*    <FontAwesomeIcon icon={faGraduationCap}/>*/}
-                    {/*    <h6>Education</h6>*/}
-                    {/*</div>*/}
-                    {/*<div className={finalThirdContolBtnClass} onClick={() => {*/}
-                    {/*    setSlides((prevState => {*/}
-                    {/*        changeSlidesNumbers(2, prevState = initSlidesNames)*/}
-                    {/*        setActiveSlideNumber(2)*/}
-                    {/*    }))*/}
-                    {/*}}>*/}
-                    {/*    <FontAwesomeIcon icon={faStar}/>*/}
-                    {/*    <h6>Skills</h6>*/}
-                    {/*</div>*/}
                 </div>
+
                 <div className={s.slidesBlockWrap}>
                     <div className={s.slidesBlock}>
                         <div className={`${s.slide} ${s[slides[0]]}`}
@@ -387,7 +363,7 @@ export const InnerComponentTopRight = (props) => {
                 </div>
             </div>
             <div className={s.closeButton}>
-                <FontAwesomeIcon icon={faTimes} className={s.fontAwesome} onClick={() => {
+                <FontAwesomeIcon icon={faSignOutAlt} className={s.fontAwesome} onClick={() => {
                     props.setNumberOfActiveBlock(1)
                 }}/>
             </div>

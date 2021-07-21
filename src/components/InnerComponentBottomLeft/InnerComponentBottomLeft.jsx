@@ -9,13 +9,15 @@ import shavasana from '../../img/shavas.jpg'
 import statue from '../../img/statue for find.jpg'
 import space from '../../img/unnamed.jpg'
 import boat from '../../img/userAva.jpg'
-import styled from 'styled-components'
 import AwesomeSlider from 'react-awesome-slider';
 import CoreStyles from 'react-awesome-slider/src/core/styles.scss';
 import AnimationStyles from 'react-awesome-slider/src/styled/fold-out-animation/fold-out-animation.scss';
 import '../../App.css'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSuitcase} from "@fortawesome/free-solid-svg-icons/faSuitcase";
+import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 
-// const classNames = require('classnames');
+const classNames = require('classnames');
 
 const images = [
     {image: townImage, title: 'town Image'},
@@ -26,69 +28,31 @@ const images = [
     {image: shavasana, title: 'shavasana'},
     {image: statue, title: 'statue'},
     {image: space, title: 'space'},
-    {image: boat, title: 'boat'}]
+    {image: boat, title: 'boat'}
+]
 
-// const cssModule = {
-// --slider-height-percentage: '60%',
-// --slider-transition-duration: '346ms',
-// --organic-arrow-thickness: '4px',
-// --organic-arrow-border-radius: '0px',
-// --organic-arrow-height: '40px',
-// --organic-arrow-color: '#56a491',
-// --control-button-width: '10%',
-// --control-button-height: '25%',
-// --control-button-background: 'transparent',
-// --control-bullet-color: '#65c1ab',
-// --control-bullet-active-color: '#56a491',
-// --loader-bar-color: '#851515',
-// --loader-bar-height: '6px'
-// }
-// const cssModule = {
-//     '--sliderHeightPercentage': '60%',
-//     '--sliderTransitionDuration': '500ms',
-//     '--organicArrowThickness': '6px',
-//     '--organicArrowBorderRadius': '0px',
-//     '--organicArrowHeight': '40px',
-//     '--organicArrowColor': '#b1a413',
-//     '--controlButtonWidth': '10%',
-//     '--controlButtonHeight': '25%',
-//     '--controlButtonBackground': 'transparent',
-//     '--controlBulletColor': '#c7d667',
-//     '--controlBulletActiveColor': '#77b631',
-//     '--loaderBarColor': '#852f43',
-//     '--loaderBarHeight': '6px'
-// }
-
-// const Slider = styled(AwesomeSlider)`
-//  .awssld__controls__arrow-left:before,
-//  .awssld__controls__arrow-left:after {
-//     background-color: red;
-//     }
-// `
-
-
-export const InnerComponentBottomLeft = () => {
-    // const inputRef = React.useRef(null)
-    const [activeSlide, setActiveSlide] = useState(-1)
+export const InnerComponentBottomLeft = (props) => {
+    const [activeSlide, setActiveSlide] = useState(0)
 
     const showSlider = (index) => {
         setActiveSlide(index)
     }
 
     return (
-        <div className={s.wrap}>
+        <div className={classNames(s.container, {[s.invisible]: props.activeBlockNumber !== 3})}>
             <h2>
                 <span>MY</span> <span>PORTFOLIO</span>
-
             </h2>
-            <div className="InnerComponentTopRight_divideLineBlock__1F0dJ">
-                <div className="InnerComponentTopRight_line__1fYKi"/>
-                <div className="InnerComponentTopRight_letterIcon__T6QRn">
+
+            <div className={s.divideLineBlock}>
+                <div className={s.line}/>
+                <div className={s.letterIcon}>
+                    <FontAwesomeIcon icon={faSuitcase}/>
                 </div>
                 <div className={s.line}/>
-
             </div>
-            <div className={s.imagesContainer}>
+
+            <div className={`${s.imagesContainer} ${activeSlide !== 0 && s.onActiveSlider}`}>
                 {images.map((el, index) => (
                     <div className={s.card} key={index}
                          onClick={() => {
@@ -109,14 +73,9 @@ export const InnerComponentBottomLeft = () => {
                 ))}
             </div>
             <div
-                className={`${s.sliderWrapper} ${activeSlide !== -1 && s.activeSlider}`}
+                className={`${s.sliderWrapper} ${activeSlide !== 0 && s.activeSlider}`}
             >
-                {/*<AwesomeSlider cssModule={AwesomeSliderStyles}>*/}
-                {/*    <div data-src={townImage}/>*/}
-                {/*    <div data-src={face}/>*/}
-                {/*    <div data-src={space}/>*/}
-                {/*    <div data-src={boat}/>*/}
-                {/*</AwesomeSlider>*/}
+
                 <AwesomeSlider
                     organicArrows
                     className='sliderWrapper'
@@ -125,42 +84,22 @@ export const InnerComponentBottomLeft = () => {
                     animation="foldOutAnimation"
                     cssModule={[CoreStyles, AnimationStyles]}
                 >
-                    <div data-src={space}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={face}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={boat}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={townImage}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={shavasana}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={statue}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
-                    <div data-src={sunEarth}>
-                        <div className={s.titleBackground} onClick={() => {
-                            setActiveSlide(-1)
-                        }}><p className={s.title}>hello gues</p></div>
-                    </div>
+
+                    {images.map((el, index) => (
+                        <div data-src={el.image} key={index}>
+                            <div className={s.titleBackground} onClick={() => {
+                                setActiveSlide(0)
+                            }}><p className={s.title}>{el.title}</p></div>
+                        </div>
+                    ))}
+
+
                 </AwesomeSlider>
+            </div>
+            <div className={s.closeButton}>
+                <FontAwesomeIcon icon={faSignOutAlt} className={s.fontAwesome} onClick={() => {
+                    props.setNumberOfActiveBlock(1)
+                }}/>
             </div>
         </div>
     )

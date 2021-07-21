@@ -44,10 +44,9 @@ function App() {
 
     return (
         <div className={appClassName}>
-            <div className={s.wrapForAppear}>
-                {/*<div className={s.first}></div>*/}
-                {/*<div className={s.second}></div>*/}
-            </div>
+
+            <div className={s.wrapForAppear}/>
+
             <div className={s.mainPicture}>
             </div>
             <div className={s.contentColumn}>
@@ -58,9 +57,10 @@ function App() {
                 </section>
 
                 <section className={finalSecondBlock_item_Class}>
-                    {activeBlockNumber !== 2 && <div className={s.miniBlock} onClick={() => {
-                        setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
-                    }}>
+                    {activeBlockNumber !== 2 && <div className={s.miniBlock}
+                                                     onClick={() => {
+                                                         setNumberOfActiveBlock(activeBlockNumber === 2 ? 1 : 2)
+                                                     }}>
                         <BigButton
                             firstWorld='ABOUT'
                             secondWorld='ME'
@@ -72,26 +72,34 @@ function App() {
                     />}
                 </section>
 
-                <section className={finalThirdBlock_item_Class}
-                         // onClick={() => {
-                         //     setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
-                         // }}
-                >
-                    {activeBlockNumber !== 3 && <div className={s.miniBlock}>
+                <section className={finalThirdBlock_item_Class}>
+                    {activeBlockNumber !== 3 && <div className={s.miniBlock}
+                                                     onClick={() => {
+                                                         setNumberOfActiveBlock(activeBlockNumber === 3 ? 1 : 3)
+                                                     }}
+                    >
                         <BigButton firstWorld={'MY'} secondWorld={'PORTFOLIO'}/>
                     </div>}
-                    {numberOfBlockAfterDelay === 3 && <InnerComponentBottomLeft/>}
+                    {numberOfBlockAfterDelay === 3 && <InnerComponentBottomLeft
+                        activeBlockNumber={activeBlockNumber}
+                        setNumberOfActiveBlock={setNumberOfActiveBlock}
+                    />}
                 </section>
 
-                <section className={finalFourthBlock_item_Class}
-                         onClick={() => {
-                             setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
-                         }}>
+                <section className={finalFourthBlock_item_Class}>
 
-                    {numberOfBlockAfterDelay !== 4 ? <div className={s.miniBlock}>
-                            <BigButton firstWorld={'lets keep'} secondWorld={'in touch'}/>
+                    {numberOfBlockAfterDelay !== 4
+                        ? <div className={s.miniBlock}
+                               onClick={() => {
+                                   setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
+                               }}
+                        >
+                            <BigButton firstWorld={'GET'} secondWorld={'IN TOUCH'}/>
                         </div> :
-                        <InnerComponentBottomRight/>}
+                        <InnerComponentBottomRight
+                            activeBlockNumber={activeBlockNumber}
+                            setNumberOfActiveBlock={setNumberOfActiveBlock}
+                        />}
 
                 </section>
             </div>
