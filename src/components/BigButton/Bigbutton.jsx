@@ -5,7 +5,7 @@ const classNames = require('classnames');
 
 export const BigButton = (props) => {
     return (
-        <div className={s.bigButtonContainer}>
+        <div className={classNames(s.bigButtonContainer, {[s.invisible] : props.invisibilityCondition})}>
             <div>
                 <span
                     className={s.firstWord}

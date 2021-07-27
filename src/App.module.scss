@@ -134,7 +134,9 @@
         height 1s ease,
         top 1s ease,
         bottom 1s ease,
-        left 1s ease, opacity 1s ease, visibility 1s ease,
+        left 1s ease,
+        opacity 1s ease,
+        visibility 1s ease,
         right 1s ease;
 
         background: #faebd7;
@@ -144,16 +146,15 @@
           height: calc(100% - 48px);
           top: 24px;
           left: 0;
-          //background: #bab3b3;
           overflow: auto;
         }
 
         &.deactiveItem {
-          color: #fff;
-          width: 0px;
-          height: 0px;
+          width: 0;
+          height: 0;
           opacity: 0;
           visibility: hidden;
+          //display: none;
 
           h2, p, span, i {
             display: none;

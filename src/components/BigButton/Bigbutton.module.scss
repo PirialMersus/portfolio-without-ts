@@ -6,6 +6,11 @@
   align-items: center;
   cursor: pointer;
 
+  &.invisible{
+    visibility: hidden;
+    opacity: 0;
+  }
+
   &:hover {
     >div .firstWord {
       transform: translateY(-45px);

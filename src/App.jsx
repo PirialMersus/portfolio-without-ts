@@ -17,7 +17,7 @@ function App() {
     }, [])
 
 
-    const [activeBlockNumber, setNumberOfActiveBlock] = useState(3)
+    const [activeBlockNumber, setNumberOfActiveBlock] = useState(1)
     const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
 
     useEffect(() => {
@@ -87,19 +87,21 @@ function App() {
                 </section>
 
                 <section className={finalFourthBlock_item_Class}>
-
-                    {numberOfBlockAfterDelay !== 4
-                        ? <div className={s.miniBlock}
-                               onClick={() => {
-                                   setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
-                               }}
-                        >
-                            <BigButton firstWorld={'GET'} secondWorld={'IN TOUCH'}/>
-                        </div> :
-                        <InnerComponentBottomRight
-                            activeBlockNumber={activeBlockNumber}
-                            setNumberOfActiveBlock={setNumberOfActiveBlock}
-                        />}
+                    {activeBlockNumber !== 4
+                    && <div className={s.miniBlock}
+                            onClick={() => {
+                                setNumberOfActiveBlock(activeBlockNumber === 4 ? 1 : 4)
+                            }}
+                    >
+                        <BigButton
+                            firstWorld={'GET'}
+                            secondWorld={'IN TOUCH'}
+                            invisibilityCondition={}/>
+                    </div>}
+                    {numberOfBlockAfterDelay === 4 && <InnerComponentBottomRight
+                        activeBlockNumber={activeBlockNumber}
+                        setNumberOfActiveBlock={setNumberOfActiveBlock}
+                    />}
 
                 </section>
             </div>
