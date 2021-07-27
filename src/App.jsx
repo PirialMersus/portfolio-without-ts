@@ -96,7 +96,7 @@ function App() {
                         <BigButton
                             firstWorld={'GET'}
                             secondWorld={'IN TOUCH'}
-                            invisibilityCondition={}/>
+                            invisibilityCondition={activeBlockNumber === 4 || numberOfBlockAfterDelay === 4}/>
                     </div>}
                     {numberOfBlockAfterDelay === 4 && <InnerComponentBottomRight
                         activeBlockNumber={activeBlockNumber}
