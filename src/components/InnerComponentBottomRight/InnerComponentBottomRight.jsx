@@ -9,7 +9,7 @@ const classNames = require('classnames');
 
 export const InnerComponentBottomRight = (props) => {
     return (
-        <div className={classNames(s.container, {[s.invisible]: props.activeBlockNumber !== 4})}>
+        <div className={classNames(s.container, {[s.visible]: props.numberOfBlockAfterDelay === 4})}>
             <div className={s.divideLineBlock}>
                 <div className={s.line}/>
                 <div className={s.letterIcon}>

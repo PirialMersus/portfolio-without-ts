@@ -3,11 +3,13 @@
     max-height: 100%;
     max-width: 100%;
     transition: all 1s ease;
+    opacity: 0;
+    visibility: hidden;
 
 
-    &.invisible {
-        opacity: 0;
-        visibility: hidden;
+    &.visible {
+        opacity: 1;
+        visibility: visible;
     }
 
     .divideLineBlock {

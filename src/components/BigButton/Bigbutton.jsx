@@ -5,14 +5,17 @@ const classNames = require('classnames');
 
 export const BigButton = (props) => {
     return (
-        <div className={classNames(s.bigButtonContainer, {[s.invisible] : props.invisibilityCondition})}>
+        <div className={s.bigButtonContainer}>
             <div>
                 <span
                     className={s.firstWord}
                     data-text={props.firstWorld}>{props.firstWorld}</span>&nbsp;
                 <span
                     className={s.secondWord}
-                    data-text={props.secondWorld}>{props.secondWorld}</span>
+                    data-text={props.secondWorld}
+                >
+                    {props.secondWorld}
+                </span>
             </div>
         </div>
     )

@@ -5,11 +5,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  &.invisible{
-    visibility: hidden;
-    opacity: 0;
-  }
+  width: 100%;
 
   &:hover {
     >div .firstWord {

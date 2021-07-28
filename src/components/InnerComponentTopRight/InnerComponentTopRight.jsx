@@ -64,7 +64,7 @@ export const InnerComponentTopRight = (props) => {
     }
 
     return (
-        <div className={classNames(s.container, {[s.invisible]: props.activeBlockNumber !== 2})}>
+        <div className={classNames(s.container, {[s.visible]: props.numberOfBlockAfterDelay === 2})}>
             <h2>Hello, guys</h2>
             <div className={s.divideLineBlock}>
                 <div className={s.line}/>

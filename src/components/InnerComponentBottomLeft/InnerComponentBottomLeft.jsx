@@ -33,13 +33,15 @@ const images = [
 
 export const InnerComponentBottomLeft = (props) => {
     const [activeSlide, setActiveSlide] = useState(0)
+    const [isSliderShown, setIsSliderShown] = useState(false)
 
-    const showSlider = (index) => {
+    const onImageClickHandler = (index) => {
         setActiveSlide(index)
+        setIsSliderShown(true)
     }
 
     return (
-        <div className={classNames(s.container, {[s.invisible]: props.activeBlockNumber !== 3})}>
+        <div className={classNames(s.container, {[s.visible]: props.numberOfBlockAfterDelay === 3})}>
             <h2>
                 <span>MY</span> <span>PORTFOLIO</span>
             </h2>
@@ -52,11 +54,11 @@ export const InnerComponentBottomLeft = (props) => {
                 <div className={s.line}/>
             </div>
 
-            <div className={`${s.imagesContainer} ${activeSlide !== 0 && s.onActiveSlider}`}>
+            <div className={`${s.imagesContainer} ${isSliderShown === true && s.onActiveSlider}`}>
                 {images.map((el, index) => (
                     <div className={s.card} key={index}
                          onClick={() => {
-                             showSlider(index)
+                             onImageClickHandler(index)
                          }}
                     >
                         <div className={s.box}>
@@ -72,8 +74,9 @@ export const InnerComponentBottomLeft = (props) => {
                     </div>
                 ))}
             </div>
+
             <div
-                className={`${s.sliderWrapper} ${activeSlide !== 0 && s.activeSlider}`}
+                className={`${s.sliderWrapper} ${isSliderShown === true && s.activeSlider}`}
             >
 
                 <AwesomeSlider
@@ -88,14 +91,14 @@ export const InnerComponentBottomLeft = (props) => {
                     {images.map((el, index) => (
                         <div data-src={el.image} key={index}>
                             <div className={s.titleBackground} onClick={() => {
-                                setActiveSlide(0)
+                                setIsSliderShown(false)
                             }}><p className={s.title}>{el.title}</p></div>
                         </div>
                     ))}
 
-
                 </AwesomeSlider>
             </div>
+
             <div className={s.closeButton}>
                 <FontAwesomeIcon icon={faSignOutAlt} className={s.fontAwesome} onClick={() => {
                     props.setNumberOfActiveBlock(1)

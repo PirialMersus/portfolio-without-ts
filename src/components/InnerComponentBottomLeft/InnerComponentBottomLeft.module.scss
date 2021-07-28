@@ -2,10 +2,12 @@
   //overflow: auto;
   transition: all 1s ease;
   position: relative;
+  opacity: 0;
+  visibility: hidden;
 
-  &.invisible {
-    opacity: 0;
-    visibility: hidden;
+  &.visible {
+    opacity: 1;
+    visibility: visible;
   }
 
   h2 {
@@ -147,11 +149,11 @@
   }
 
   .sliderWrapper {
-    height: 100px;
-    width: 100px;
-    z-index: 999;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
     position: absolute;
-    top: 200%;
+    top: 100%;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
@@ -171,6 +173,8 @@
     cursor: pointer;
     z-index: 100;
     color: #656c6d;
+    background-color: rgba(255, 255, 255, 0.7);;
+border-radius: 5px;
 
     svg {
       width: 100%;

@@ -44,10 +44,6 @@
 
       &:before {
         transform: translateX(-100%);
-        //width: 0;
-        //display: none;
-        //
-
       }
 
 
@@ -95,7 +91,7 @@
       padding: 0;
       margin: 0;
       top: 0;
-      background-color: #f0f8ff;
+      background-color: #efe9e9;
 
       > section {
         position: absolute;
@@ -139,11 +135,11 @@
         visibility 1s ease,
         right 1s ease;
 
-        background: #faebd7;
+        background: #efe9e9;
 
         &.activeItem {
           width: calc(100% - 24px);
-          height: calc(100% - 48px);
+          height: auto;
           top: 24px;
           left: 0;
           overflow: auto;
@@ -164,6 +160,34 @@
         .miniBlock {
           height: 100%;
           width: 100%;
+          transition: all 1s ease;
+          opacity: 0;
+          visibility: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          > div {
+            p {
+              text-align: center;
+            }
+
+            > div {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .typedText {
+                color: #ffb400;
+                font-weight: bold;
+              }
+            }
+          }
+
+          &.visible {
+            opacity: 1;
+            visibility: visible;
+          }
         }
       }
     }
