@@ -4,6 +4,12 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEnvelopeOpen} from "@fortawesome/free-solid-svg-icons/faEnvelopeOpen";
 import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 import {faPhone} from "@fortawesome/free-solid-svg-icons/faPhone";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import {faTelegramPlane} from "@fortawesome/free-brands-svg-icons/faTelegramPlane";
+import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
+import {faFacebookF} from "@fortawesome/free-brands-svg-icons/faFacebookF";
+import {faLinkedinIn} from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
+import githubIcon from "./../../img/github.svg"
 
 const classNames = require('classnames');
 
@@ -23,13 +29,30 @@ export const InnerComponentBottomRight = (props) => {
                     <h6>PHONE</h6>
                     <span><FontAwesomeIcon icon={faPhone}/>+380673991967</span>
                     <h6>EMAIL</h6>
-                    <span> you@youwebsite.com</span>
+                    <span><FontAwesomeIcon icon={faEnvelope}/>you@youwebsite.com</span>
                     <h6>telegram</h6>
-                    <span>linda.smith</span>
+                    <span><FontAwesomeIcon icon={faTelegramPlane}/>linda.smith</span>
                     <h6>ADDRESS</h6>
-                    <span>Moscow, Russia</span>
+                    <span><FontAwesomeIcon icon={faHome}/>Moscow, Russia</span>
                     <h6>SOCIAL PROFILES</h6>
-                    <span>+380673991967</span>
+                    <ul className={s.socialNetworks}>
+                        {/*<FontAwesomeIcon icon={faFacebookSquare} className={s.faceBook}/>*/}
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=100006915912945" className={s.facebook}>
+                                <FontAwesomeIcon icon={faFacebookF}/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/fesenko-gennadii-578b46161/" className={s.linkedin}>
+                                <FontAwesomeIcon icon={faLinkedinIn}/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/PirialMersus" className={s.github}>
+                                <img src={githubIcon} alt="github"/>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div className={s.rightSide}></div>
             </div>

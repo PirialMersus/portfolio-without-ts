@@ -32,12 +32,13 @@ const images = [
 ]
 
 export const InnerComponentBottomLeft = (props) => {
-    const [activeSlide, setActiveSlide] = useState(0)
+    const [activeSlide, setActiveSlide] = useState(1)
     const [isSliderShown, setIsSliderShown] = useState(false)
 
     const onImageClickHandler = (index) => {
-        setActiveSlide(index)
         setIsSliderShown(true)
+
+        setActiveSlide(index)
     }
 
     return (
