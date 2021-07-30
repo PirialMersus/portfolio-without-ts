@@ -10,6 +10,7 @@ import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
 import {faFacebookF} from "@fortawesome/free-brands-svg-icons/faFacebookF";
 import {faLinkedinIn} from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
 import githubIcon from "./../../img/github.svg"
+import TextField from "@material-ui/core/TextField";
 
 const classNames = require('classnames');
 
@@ -54,7 +55,13 @@ export const InnerComponentBottomRight = (props) => {
                         </li>
                     </ul>
                 </div>
-                <div className={s.rightSide}></div>
+                <div className={s.rightSide}>
+                    <form className={s.form} noValidate autoComplete="off">
+                        <TextField id="standard-basic" label="Standard" color='blue'/>
+                        <TextField id="filled-basic" label="Filled" variant="filled" />
+                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                    </form>
+                </div>
             </div>
 
             <div className={s.closeButton}>
