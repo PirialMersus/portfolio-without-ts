@@ -111,7 +111,10 @@
 
     .rightSide {
       .form {
-        color: yellow;
+
+        .inputFirst {
+          color: #c41c65 !important;
+        }
       }
     }
   }

@@ -11,10 +11,44 @@ import {faFacebookF} from "@fortawesome/free-brands-svg-icons/faFacebookF";
 import {faLinkedinIn} from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
 import githubIcon from "./../../img/github.svg"
 import TextField from "@material-ui/core/TextField";
+import ClassesNesting from "../materialUi/TextField";
+import {withStyles} from "@material-ui/styles";
 
 const classNames = require('classnames');
 
+const CssTextField = withStyles({
+    root: {
+        '& label.Mui-focused': {
+            color: '#ffb400',
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: '#ffb400',
+        },
+        // '& .MuiInput-input': {          input text styles
+        //     color: '#ffb400',
+        // },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#ffb400',
+            },
+            '&:hover fieldset': {
+                borderColor: '#ffb400',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#ffb400',
+            },
+        },
+    },
+})(TextField);
+
+
+
 export const InnerComponentBottomRight = (props) => {
+
+    const divStyle = {
+        color: 'blue',
+    };
+
     return (
         <div className={classNames(s.container, {[s.visible]: props.numberOfBlockAfterDelay === 4})}>
             <div className={s.divideLineBlock}>
@@ -57,9 +91,7 @@ export const InnerComponentBottomRight = (props) => {
                 </div>
                 <div className={s.rightSide}>
                     <form className={s.form} noValidate autoComplete="off">
-                        <TextField id="standard-basic" label="Standard" color='blue'/>
-                        <TextField id="filled-basic" label="Filled" variant="filled" />
-                        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+                        <CssTextField id="outlined-basic" label="Outlined"/>
                     </form>
                 </div>
             </div>
