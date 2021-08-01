@@ -10,44 +10,15 @@ import {faHome} from "@fortawesome/free-solid-svg-icons/faHome";
 import {faFacebookF} from "@fortawesome/free-brands-svg-icons/faFacebookF";
 import {faLinkedinIn} from "@fortawesome/free-brands-svg-icons/faLinkedinIn";
 import githubIcon from "./../../img/github.svg"
-import TextField from "@material-ui/core/TextField";
-import ClassesNesting from "../materialUi/TextField";
-import {withStyles} from "@material-ui/styles";
+import {Form} from "../Form/Form";
 
 const classNames = require('classnames');
 
-const CssTextField = withStyles({
-    root: {
-        '& label.Mui-focused': {
-            color: '#ffb400',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#ffb400',
-        },
-        // '& .MuiInput-input': {          input text styles
-        //     color: '#ffb400',
-        // },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#ffb400',
-            },
-            '&:hover fieldset': {
-                borderColor: '#ffb400',
-            },
-            '&.Mui-focused fieldset': {
-                borderColor: '#ffb400',
-            },
-        },
-    },
-})(TextField);
 
 
 
 export const InnerComponentBottomRight = (props) => {
 
-    const divStyle = {
-        color: 'blue',
-    };
 
     return (
         <div className={classNames(s.container, {[s.visible]: props.numberOfBlockAfterDelay === 4})}>
@@ -90,9 +61,14 @@ export const InnerComponentBottomRight = (props) => {
                     </ul>
                 </div>
                 <div className={s.rightSide}>
-                    <form className={s.form} noValidate autoComplete="off">
-                        <CssTextField id="outlined-basic" label="Outlined"/>
-                    </form>
+                    <h6>Feel free to drop me a line</h6>
+                    <div className={s.text}>
+                        <p className={s.text}>
+                            If you have any suggestion, project or even you want to say Hello.. Please fill out the form
+                            below and I will reply you shortly.
+                        </p>
+                    </div>
+                    <Form/>
                 </div>
             </div>
 

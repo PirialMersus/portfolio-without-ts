@@ -40,6 +40,7 @@
   .contentRow {
     padding: 0 24px;
     display: flex;
+    max-height: max-content;
 
     .leftSide {
       padding: 24px;
@@ -52,6 +53,10 @@
         font-weight: 700;
         text-transform: uppercase;
         color: #ffb400;
+
+        &:first-child {
+          margin-top: 0;
+        }
       }
 
       > span {
@@ -110,12 +115,27 @@
     }
 
     .rightSide {
-      .form {
-
-        .inputFirst {
-          color: #c41c65 !important;
-        }
+      padding: 0 1.5rem;
+      max-height: max-content;
+      h6 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.15rem;
+        line-height: 110%;
+        color: #656c6d;
       }
+      .text {
+        font-size: 14px;
+        margin-top: 14px;
+        width: 83.3333333333%;
+        box-sizing: border-box;
+        //padding: 0 .75rem;
+        min-height: 1px;
+        line-height: 2;
+        color: #656c6d;
+        font-weight: 400;
+      }
+
     }
   }
 
