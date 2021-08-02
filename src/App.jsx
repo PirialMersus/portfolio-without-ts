@@ -18,7 +18,7 @@ function App() {
     }, [])
 
 
-    const [activeBlockNumber, setNumberOfActiveBlock] = useState(4)
+    const [activeBlockNumber, setNumberOfActiveBlock] = useState(3)
     const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
 
     useEffect(() => {
