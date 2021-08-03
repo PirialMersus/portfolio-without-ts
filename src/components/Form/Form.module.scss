@@ -34,6 +34,23 @@
     align-self: flex-start;
     position: absolute;
     bottom: 0;
+    width: 66.6666666667%;
+    background: #ffb400;
+    height: 42px;
+    line-height: 42px;
+    font-size: 15px;
+    transition: 0.3s ease-in-out;
+    font-weight: 700;
+    box-shadow: none;
+    border-radius: 0;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    &:hover {
+      color: #eee;
+    }
   }
 
 }
