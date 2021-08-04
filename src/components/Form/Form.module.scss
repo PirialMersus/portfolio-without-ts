@@ -48,6 +48,11 @@
     cursor: pointer;
     outline: 0;
     border: none;
+
+    span{
+      margin-right: 10px;
+    }
+
     &:hover {
       color: #eee;
     }

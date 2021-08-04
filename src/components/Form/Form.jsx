@@ -121,10 +121,9 @@ export const Form = () => {
 
             </div>
             {/*</FormControl>*/}
-            <button type={'submit'} className={s.btn}>Send message <FontAwesomeIcon
-                icon={faTelegramPlane}/></button>
-            {/*<Button type={'submit'} variant={'contained'} color={'primary'}>Send message <FontAwesomeIcon*/}
-            {/*    icon={faTelegramPlane}/></Button>*/}
+            <button type={'submit'} className={s.btn}><span>Send message</span><FontAwesomeIcon
+                icon={faTelegramPlane}/>
+            </button>
         </form>
     )
 }
