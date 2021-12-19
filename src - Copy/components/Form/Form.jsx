@@ -9,8 +9,6 @@ import TextField from "@material-ui/core/TextField";
 import {useField, useFormik} from "formik";
 import FormControl from "@material-ui/core/FormControl";
 import Button from "@material-ui/core/Button";
-import emailjs from 'emailjs-com';
-
 import {faTelegramPlane} from "@fortawesome/free-brands-svg-icons/faTelegramPlane";
 
 const CssTextField = withStyles({
@@ -44,6 +42,7 @@ const CssTextField = withStyles({
 
 export const Form = () => {
 
+
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -69,12 +68,6 @@ export const Form = () => {
         },
         onSubmit: values => {
             console.log(values)
-            emailjs.send('service_gsfx0qh', 'template_lojlps9', values, 'user_bGtXPIUcyJP1RAgR0lXla')
-                .then((result) => {
-                    console.log(result.text);
-                }, (error) => {
-                    console.log(error.text);
-                });
             formik.resetForm()
         },
     })
