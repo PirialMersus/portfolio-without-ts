@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import s from './InnerComponentBottomLeft.module.scss'
 import townImage from '../../img/2CjYynXykis.jpg'
 import sunEarth from '../../img/70188833_15484.jpg'
@@ -34,6 +34,13 @@ const images = [
 export const InnerComponentBottomLeft = (props) => {
     const [activeSlide, setActiveSlide] = useState(1)
     const [isSliderShown, setIsSliderShown] = useState(false)
+    // const [isSliderShownWithDelay, setIsSliderShownWithDelay] = useState(false)
+    //
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setIsSliderShownWithDelay(isSliderShown)
+    //     }, 1000)
+    // }, [isSliderShown])
 
     const onImageClickHandler = (index) => {
         setIsSliderShown(true)

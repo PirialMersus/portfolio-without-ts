@@ -43,14 +43,15 @@
     max-height: max-content;
 
     .leftSide {
-      padding: 24px;
+      padding: 18px;
       border: 1px solid #ddd;
       background: #f2f2f2;
+      min-width: 250px;
 
-      h6 {
+      >h6 {
         margin: 18px 0;
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 500;
         text-transform: uppercase;
         color: #ffb400;
 
@@ -129,7 +130,7 @@
       .text {
         font-size: 14px;
         margin-top: 14px;
-        width: 83.3333333333%;
+        //width: 83.3333333333%;
         box-sizing: border-box;
         //padding: 0 .75rem;
         min-height: 1px;

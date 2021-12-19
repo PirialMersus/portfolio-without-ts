@@ -10,3 +10,7 @@
 .sliderWrapper .awssld__bullets >button.awssld__bullets--active{
     background-color: #e0b56e;
 }
+.awssld__bullets {
+    position: static;
+    margin-top: 10px;
+}
