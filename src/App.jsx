@@ -18,7 +18,7 @@ function App() {
     }, [])
 
 
-    const [activeBlockNumber, setNumberOfActiveBlock] = useState(3)
+    const [activeBlockNumber, setNumberOfActiveBlock] = useState(2)
     const [numberOfBlockAfterDelay, setNumberOfBlockAfterDelay] = useState(1)
 
     useEffect(() => {
@@ -57,12 +57,12 @@ function App() {
                     <div className={commonMiniBlockClass}>
                         <div>
                             <p>HI THERE ! I'M</p>
-                            <h2>LINDA SMITH</h2>
+                            <h2>GENA FESENKO</h2>
                             <div>
                                 <ReactTypingEffect
                                     className={s.typedText}
                                     cursor={' '}
-                                    text={["BLOGGER", "WEB DESIGNER", "DEVELOPER"]}
+                                    text={["DEVELOPER", "REACT", "JAVASCRIPT"]}
                                     eraseDelay={1000}
                                     typingDelay={1000}
                                     speed={50}

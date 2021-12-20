@@ -186,6 +186,10 @@
       align-items: center;
 
       .controlBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         background: rgba(0, 0, 0, 0.1) !important;
         box-shadow: none;
         padding: 24px;
@@ -194,19 +198,21 @@
         user-select: none;
         color: #656c6d;
         line-height: 1.5;
-        font-size: 20px;
+        font-size: 14px;
         background: #fff;
         width: 100%;
 
         svg {
-          margin-right: 13px;
+          margin-right: 10px;
         }
 
         h6 {
           display: inline-block;
           text-transform: uppercase;
-          font-size: 1.15rem;
+          //font-size: 1.15rem;
           line-height: 110%;
+          font-size: 18px;
+          font-weight: 500;
         }
 
         &.active {
@@ -222,6 +228,8 @@
       right: auto;
       padding: 90px 24px 0;
       width: 66.6666666667%;
+
+
 
       .slidesBlock {
         position: relative;
@@ -274,6 +282,8 @@
             background: #f2f2f2;
             border-bottom: 1px solid #ddd;
             color: #ffb400;
+            margin-bottom: 5px;
+
 
             h6 {
               display: inline-block;

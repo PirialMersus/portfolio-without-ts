@@ -68,10 +68,9 @@
     //transform: scaleX(1);
 
     .mainPicture {
+      display: none;
       background-image: url('/img/joly.jpg');
       padding: 0;
-      //margin-top: 24px;
-      //margin-left: 24px;
       height: calc(100vh - 48px);
       background-size: cover;
       background-position: center center;
@@ -87,8 +86,10 @@
       position: absolute;
       height: 100%;
       overflow: hidden;
-      width: 66.6666666667%;
-      left: 33.3333333333% !important;
+      //width: 66.6666666667%;
+      //left: 33.3333333333% !important;
+      width: 100%;
+      left: 0;
       padding: 0;
       margin: 0;
       top: 0;
@@ -180,6 +181,7 @@
 
               .typedText {
                 color: #ffb400;
+                font-size: 20px;
                 font-weight: bold;
               }
             }

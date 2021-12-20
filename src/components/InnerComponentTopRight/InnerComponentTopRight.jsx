@@ -16,7 +16,10 @@ import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 
 const classNames = require('classnames');
 
-const buttonsNames = ['experience', 'education', 'skills']
+const buttonsNames = [{btnName: 'experience', btnIcon: faBriefcase}, {
+    btnName: 'education',
+    btnIcon: faGraduationCap
+}, {btnName: 'skills', btnIcon: faStar}]
 
 export const InnerComponentTopRight = (props) => {
 
@@ -118,8 +121,8 @@ export const InnerComponentTopRight = (props) => {
                              onClick={() => slideClickHandler(idx)}
                              key={idx}
                         >
-                            <FontAwesomeIcon icon={faBriefcase}/>
-                            <h6>{button}</h6>
+                            <FontAwesomeIcon icon={button.btnIcon}/>
+                            <h6>{button.btnName}</h6>
                         </div>
                     ))}
                 </div>
@@ -135,29 +138,27 @@ export const InnerComponentTopRight = (props) => {
                             <div className={s.resumeCardBody}>
                                 <div className={s.experience}>
                                     <div className={s.resumeContent}>
-                                        <h6><span>Web Designer - </span>Envato</h6>
+                                        <h6>WORKING AS A FRONTEND DEVELOPER AT <span>PROVECTUS COMPANY</span>
+                                        </h6>
                                         <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2015 - 2018</span></span>
-                                        <p>Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-                                            adipisicing
-                                            elit</p>
+                                            icon={faCalendar}/> <span>2021, august - nowadays</span></span>
+                                        <p> I am working with Redux, React/Redux, axios, Material-UI library,
+                                            Hooks, TypeScript. Also I am creating Rest API. Refactoring, bug fixing,
+                                            migrating to TypeScript, registration and login form creation, custom
+                                            components development, jest testing, storybook. JavaScript,
+                                            TypeScript, React/Redux, RestAPI. As a result, I am improving my
+                                            technical and soft skills
+                                        </p>
                                     </div>
                                     <span className={s.separator}/>
                                     <div className={s.resumeContent}>
-                                        <h6><span>Web Developer - </span>Google</h6>
+                                        <h6>WORKING AS SMM AND CONTENT MANAGER AT <span>IT COMPANY</span></h6>
                                         <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2011 - 2015</span></span>
-                                        <p>Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit,
-                                            tempor incididunt</p>
-                                    </div>
-                                    <span className={s.separator}/>
-                                    <div className={s.resumeContent}>
-                                        <h6><span>Community Manager - </span>Adobe</h6>
-                                        <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2007 - 2011</span></span>
-                                        <p>Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed
-                                            do
-                                            eiusmod tempor duntt</p>
+                                            icon={faCalendar}/> <span>2020 - 2021</span></span>
+                                        <p>- improved my skilles in working with team<br/>
+                                            - set up SRM systems<br/>
+                                            - red, studied and coding all free time
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -171,29 +172,32 @@ export const InnerComponentTopRight = (props) => {
                             <div className={s.resumeCardBody}>
                                 <div className={s.experience}>
                                     <div className={s.resumeContent}>
-                                        <h6><span>ENGINEERING DIPLOMA - </span>OXFORD UNIVERSITY</h6>
+                                        <h6><span>IT INCUBATOR FRONT END DEVELOPMENT COURSES</span>
+                                        </h6>
                                         <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2015 - 2018</span></span>
+                                            icon={faCalendar}/> <span>2020-2021</span></span>
                                         <p>Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed
                                             do
                                             eiusmod tempor duntt</p>
                                     </div>
                                     <span className={s.separator}/>
                                     <div className={s.resumeContent}>
-                                        <h6><span>MASTERS DEGREE  - </span>PARIS UNIVERSITY</h6>
+                                        <h6><span>GO IT</span> FULLSTACK FRONTEND COURSES</h6>
                                         <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2011 - 2015</span></span>
-                                        <p>Lorem incididunt dolor sit amet, consectetur eiusmod dunt doldunt dol elit,
-                                            tempor incididunt</p>
+                                            icon={faCalendar}/> <span>2017</span></span>
+                                        <p>HTML/CSS/Less/Sass; Bootstrap; Javascript; jQuery; WordPress; Responsive web
+                                            design (RWD); Git/GitHub;
+                                        </p>
                                     </div>
                                     <span className={s.separator}/>
                                     <div className={s.resumeContent}>
-                                        <h6><span>BACHELOR DEGREE - </span>BERLIN HIGHER INSTITUTE</h6>
+                                        <h6><span>DONETSK NATIONAL TECHNICAL UNIVERSITY</span></h6>
                                         <span className={s.date}><FontAwesomeIcon
-                                            icon={faCalendar}/> <span>2007 - 2011</span></span>
-                                        <p>Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed
-                                            do
-                                            eiusmod tempor duntt</p>
+                                            icon={faCalendar}/> <span>2008</span></span>
+                                        <p>- Electromechanical Faculty, specialty "Electrical systems and networks<br/>
+                                            - learned to study<br/>
+                                            - got a lot of hard and soft skills<br/>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
