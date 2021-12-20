@@ -11,6 +11,7 @@ import {
     faTimes,
     faUser
 } from '@fortawesome/free-solid-svg-icons'
+import {faStar as emptyFaStar} from '@fortawesome/free-regular-svg-icons'
 import s from './InnerComponentTopRight.module.scss'
 import {faSignOutAlt} from "@fortawesome/free-solid-svg-icons/faSignOutAlt";
 
@@ -155,9 +156,9 @@ export const InnerComponentTopRight = (props) => {
                                         <h6>WORKING AS SMM AND CONTENT MANAGER AT <span>IT COMPANY</span></h6>
                                         <span className={s.date}><FontAwesomeIcon
                                             icon={faCalendar}/> <span>2020 - 2021</span></span>
-                                        <p>- improved my skilles in working with team<br/>
+                                        <p>- improved my skills in teamwork<br/>
                                             - set up SRM systems<br/>
-                                            - red, studied and coding all free time
+                                            - read, study and code all my free time
                                         </p>
                                     </div>
                                 </div>
@@ -176,9 +177,12 @@ export const InnerComponentTopRight = (props) => {
                                         </h6>
                                         <span className={s.date}><FontAwesomeIcon
                                             icon={faCalendar}/> <span>2020-2021</span></span>
-                                        <p>Lorem ipsum dolor sit amet, tempor incididunt ut laboreconsectetur elit, sed
-                                            do
-                                            eiusmod tempor duntt</p>
+                                        <p>Props (attributes); ECMAScript; Components; connect; Class Components;
+                                            Redux-thunk; State vs Redux; HOC; Methods of lifecycle; babel;
+                                            create-react-app; Hooks; Presentational & ContainerComponents;
+                                            bind; TypeScript; RestAPI; Vanilla JS; Storybook; Ant Design; Jest;
+                                            Snapshot; Testing; MaterislUI
+                                        </p>
                                     </div>
                                     <span className={s.separator}/>
                                     <div className={s.resumeContent}>
@@ -195,7 +199,6 @@ export const InnerComponentTopRight = (props) => {
                                         <span className={s.date}><FontAwesomeIcon
                                             icon={faCalendar}/> <span>2008</span></span>
                                         <p>- Electromechanical Faculty, specialty "Electrical systems and networks<br/>
-                                            - learned to study<br/>
                                             - got a lot of hard and soft skills<br/>
                                         </p>
                                     </div>
@@ -220,6 +223,8 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
                                         </div>
@@ -231,7 +236,9 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
-                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
                                         </div>
@@ -244,6 +251,8 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
 
@@ -256,6 +265,9 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
                                                 </p>
                                             </div>
                                         </div>
@@ -263,6 +275,8 @@ export const InnerComponentTopRight = (props) => {
                                             <div className={s.resumeContent}>
                                                 <h6>LESS,SASS,SCSS</h6>
                                                 <p data-star="5">
+                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
@@ -281,6 +295,8 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
 
@@ -294,6 +310,8 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
                                         </div>
@@ -305,7 +323,9 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
-                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
                                         </div>
@@ -313,6 +333,8 @@ export const InnerComponentTopRight = (props) => {
                                             <div className={s.resumeContent}>
                                                 <h6>HTML, CSS</h6>
                                                 <p data-star="4">
+                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
@@ -330,7 +352,9 @@ export const InnerComponentTopRight = (props) => {
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
                                                     <FontAwesomeIcon icon={faStar}/>
-                                                    <FontAwesomeIcon icon={faStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
+                                                    <FontAwesomeIcon icon={emptyFaStar}/>
                                                 </p>
                                             </div>
                                         </div>
