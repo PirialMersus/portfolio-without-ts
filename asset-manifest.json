@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/portfolio-without-ts/static/css/main.2b810958.chunk.css",
+    "main.js": "/portfolio-without-ts/static/js/main.06d0ad07.chunk.js",
+    "main.js.map": "/portfolio-without-ts/static/js/main.06d0ad07.chunk.js.map",
+    "runtime-main.js": "/portfolio-without-ts/static/js/runtime-main.84a8ca48.js",
+    "runtime-main.js.map": "/portfolio-without-ts/static/js/runtime-main.84a8ca48.js.map",
+    "static/css/2.26d25708.chunk.css": "/portfolio-without-ts/static/css/2.26d25708.chunk.css",
+    "static/js/2.5e5137f6.chunk.js": "/portfolio-without-ts/static/js/2.5e5137f6.chunk.js",
+    "static/js/2.5e5137f6.chunk.js.map": "/portfolio-without-ts/static/js/2.5e5137f6.chunk.js.map",
+    "index.html": "/portfolio-without-ts/index.html",
+    "static/css/2.26d25708.chunk.css.map": "/portfolio-without-ts/static/css/2.26d25708.chunk.css.map",
+    "static/css/main.2b810958.chunk.css.map": "/portfolio-without-ts/static/css/main.2b810958.chunk.css.map",
+    "static/js/2.5e5137f6.chunk.js.LICENSE.txt": "/portfolio-without-ts/static/js/2.5e5137f6.chunk.js.LICENSE.txt",
+    "static/media/aim_final-min.e5125a11.jpg": "/portfolio-without-ts/static/media/aim_final-min.e5125a11.jpg",
+    "static/media/allWorks_final-min.d10e0855.jpg": "/portfolio-without-ts/static/media/allWorks_final-min.d10e0855.jpg",
+    "static/media/board-min.a8e2223d.jpg": "/portfolio-without-ts/static/media/board-min.a8e2223d.jpg",
+    "static/media/counter_final-min.a0e8bb72.jpg": "/portfolio-without-ts/static/media/counter_final-min.a0e8bb72.jpg",
+    "static/media/dragAndDrop-min.a6103b0d.jpg": "/portfolio-without-ts/static/media/dragAndDrop-min.a6103b0d.jpg",
+    "static/media/gitHubUserSearcher-min.2a3e94bc.jpg": "/portfolio-without-ts/static/media/gitHubUserSearcher-min.2a3e94bc.jpg",
+    "static/media/github.5e9c3c5a.svg": "/portfolio-without-ts/static/media/github.5e9c3c5a.svg",
+    "static/media/ignat-min.b83b5e42.jpg": "/portfolio-without-ts/static/media/ignat-min.b83b5e42.jpg",
+    "static/media/infiniteTable-min.b9fdd67b.jpg": "/portfolio-without-ts/static/media/infiniteTable-min.b9fdd67b.jpg",
+    "static/media/App.module.scss": "/portfolio-without-ts/static/media/myPhoto.f03170dd.jpg",
+    "static/media/niceGallery-min.bfaaf6ae.jpg": "/portfolio-without-ts/static/media/niceGallery-min.bfaaf6ae.jpg",
+    "static/media/payForm-min.051bd674.jpg": "/portfolio-without-ts/static/media/payForm-min.051bd674.jpg",
+    "static/media/petDesktopLayout-min.c3d7e447.jpg": "/portfolio-without-ts/static/media/petDesktopLayout-min.c3d7e447.jpg",
+    "static/media/pokemonGame-min.d5a51275.jpg": "/portfolio-without-ts/static/media/pokemonGame-min.d5a51275.jpg",
+    "static/media/siteScreen-min.2b39268c.jpg": "/portfolio-without-ts/static/media/siteScreen-min.2b39268c.jpg",
+    "static/media/slider_final-min.3d9e8769.jpg": "/portfolio-without-ts/static/media/slider_final-min.3d9e8769.jpg",
+    "static/media/socNetwork-min.ed807a36.jpg": "/portfolio-without-ts/static/media/socNetwork-min.ed807a36.jpg",
+    "static/media/tableLayout-min.9dd598d7.jpg": "/portfolio-without-ts/static/media/tableLayout-min.9dd598d7.jpg",
+    "static/media/todo-min.0336df6f.png": "/portfolio-without-ts/static/media/todo-min.0336df6f.png",
+    "static/media/winterAdventure-min.e0ea618d.jpg": "/portfolio-without-ts/static/media/winterAdventure-min.e0ea618d.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.84a8ca48.js",
+    "static/css/2.26d25708.chunk.css",
+    "static/js/2.5e5137f6.chunk.js",
+    "static/css/main.2b810958.chunk.css",
+    "static/js/main.06d0ad07.chunk.js"
+  ]
+}
