@@ -35,11 +35,11 @@ export const InnerComponentBottomRight = (props) => {
                     <h6>PHONE</h6>
                     <span><FontAwesomeIcon icon={faPhone}/>+380673991967</span>
                     <h6>EMAIL</h6>
-                    <span><FontAwesomeIcon icon={faEnvelope}/>you@youwebsite.com</span>
+                    <span><FontAwesomeIcon icon={faEnvelope}/>pirialmersus@gmail.com</span>
                     <h6>telegram</h6>
-                    <span><FontAwesomeIcon icon={faTelegramPlane}/>linda.smith</span>
+                    <span><FontAwesomeIcon icon={faTelegramPlane}/>pirial_mersus</span>
                     <h6>ADDRESS</h6>
-                    <span><FontAwesomeIcon icon={faHome}/>Moscow, Russia</span>
+                    <span><FontAwesomeIcon icon={faHome}/>Odessa, Ukraine</span>
                     <h6>SOCIAL PROFILES</h6>
                     <ul className={s.socialNetworks}>
                         {/*<FontAwesomeIcon icon={faFacebookSquare} className={s.faceBook}/>*/}

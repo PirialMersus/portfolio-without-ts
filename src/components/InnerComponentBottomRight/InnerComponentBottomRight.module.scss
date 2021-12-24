@@ -162,3 +162,12 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .container {
+    .closeButton {
+      width: 20px;
+      top: 20px;
+      right: 20px;
+    }
+  }
+}

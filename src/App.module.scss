@@ -2,6 +2,7 @@
 .app {
   position: relative;
   height: 100vh;
+  background-color: #efe9e9;
 
   .wrapForAppear {
     position: fixed;
@@ -68,17 +69,22 @@
     //transform: scaleX(1);
 
     .mainPicture {
-      display: none;
-      background-image: url('/img/joly.jpg');
+      //display: none;
+      position: absolute;
+      background-image: url('/img/imagecompressor/myPhoto-min.jpg');
+      background-position: 70% 50%;
       padding: 0;
       height: calc(100vh - 48px);
+      margin-top: 24px;
+      margin-left: 24px;
       background-size: cover;
-      background-position: center center;
+      //background-position: center center;
       width: calc(33.3333333333% - 48px);
+      //width: 33.3333333333%;
 
       .photo {
-        //max-height: 100vh;
-        //width: 40%;
+        max-height: 100vh;
+        width: 40%;
       }
     }
 
@@ -86,14 +92,14 @@
       position: absolute;
       height: 100%;
       overflow: hidden;
-      //width: 66.6666666667%;
-      //left: 33.3333333333% !important;
-      width: 100%;
-      left: 0;
+      width: 66.6666666667%;
+      left: 33.3333333333% !important;
+      //width: 100%;
+      //left: 0;
       padding: 0;
       margin: 0;
       top: 0;
-      background-color: #efe9e9;
+      //background-color: #efe9e9;
 
       > section {
         position: absolute;
@@ -106,6 +112,10 @@
         left: 0;
         position: relative;
         background: transparent;
+      }
+
+      > section:nth-child(1) {
+        margin-top: 24px;
       }
 
       > section:nth-child(2) {
@@ -173,6 +183,11 @@
 
             p {
               text-align: center;
+              font-size: 20px;
+            }
+
+            > h2 {
+              font-size: 35px;
             }
 
             > div {
@@ -181,7 +196,7 @@
 
               .typedText {
                 color: #ffb400;
-                font-size: 20px;
+                font-size: 25px;
                 font-weight: bold;
               }
             }
@@ -203,4 +218,20 @@
   top: 10px;
   right: 10px;
   z-index: 100;
+}
+
+@media (max-width: 1000px) {
+  .app {
+
+
+    &.visible {
+      .mainPicture {
+        display: none;
+      }
+      .contentColumn{
+        width: calc(100% - 24px);
+        left: 24px !important;
+      }
+    }
+  }
 }
